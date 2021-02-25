@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BallManager : MonoBehaviour
 {
+    [SerializeField] MeshRenderer mesh;
+
     private float x;
 
     private float y;
@@ -17,7 +19,7 @@ public class BallManager : MonoBehaviour
     void Start()
     {
         x = Random.Range(-8f, 8f);
-        y = Random.Range(0f, 4f);
+        y = Random.Range(0f, 3f);
         transform.position = new Vector3(x, y, z);
     }
 
@@ -27,7 +29,6 @@ public class BallManager : MonoBehaviour
         if (stopped)
         {
             time += Time.deltaTime;
-            Debug.Log(time);
         }
         else
         {
@@ -43,10 +44,9 @@ public class BallManager : MonoBehaviour
         }
         if (time > 1)
         {
-            Debug.Log("ok");
             time = 0;
             x = Random.Range(-8f, 8f);
-            y = Random.Range(0f, 4f);
+            y = Random.Range(0f, 3f);
             z = 20;
             transform.position = new Vector3(x, y, z);
             stopped = false;

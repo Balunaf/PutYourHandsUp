@@ -15,6 +15,8 @@ public class BallManager : MonoBehaviour
     private bool stopped = false;
 
     private float time = 0;
+
+    private float totalTime = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +52,12 @@ public class BallManager : MonoBehaviour
             z = 20;
             transform.position = new Vector3(x, y, z);
             stopped = false;
+        }
+        totalTime += Time.deltaTime;
+        if (totalTime > 180)
+        {
+            stopped = true;
+            time = 0;
         }
     }
 }

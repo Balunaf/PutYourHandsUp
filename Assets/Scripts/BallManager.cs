@@ -14,6 +14,8 @@ public class BallManager : MonoBehaviour
 
     private bool stopped = false;
 
+    private bool behind = false;
+
     private float time = 0;
 
     private float totalTime = 0;
@@ -36,15 +38,22 @@ public class BallManager : MonoBehaviour
         }
         else
         {
-            if (z > 0)
+            if (behind)
             {
-                z -= 10 * Time.deltaTime;
-                transform.position = new Vector3(x, y, z);
+                time += Time.deltaTime;
             }
             else
             {
-                stopped = true;
-            }
+                if (z > 0)
+                {
+                    z -= 10 * Time.deltaTime;
+                    transform.position = new Vector3(x, y, z);
+                }
+                else
+                {
+                    behind = true;
+                }
+            }  
         }
         if (time > 1)
         {
@@ -54,6 +63,7 @@ public class BallManager : MonoBehaviour
             z = 20;
             transform.position = new Vector3(x, y, z);
             stopped = false;
+            behind = false;
         }
         totalTime += Time.deltaTime;
         if (totalTime > 180)

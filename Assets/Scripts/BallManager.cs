@@ -31,10 +31,12 @@ public class BallManager : MonoBehaviour
         if (stopped)
         {
             time += Time.deltaTime;
+            z += 5 * Time.deltaTime;
+            transform.position = new Vector3(x, y, z);
         }
         else
         {
-            if (z > 5)
+            if (z > 0)
             {
                 z -= 10 * Time.deltaTime;
                 transform.position = new Vector3(x, y, z);
@@ -58,6 +60,14 @@ public class BallManager : MonoBehaviour
         {
             stopped = true;
             time = 0;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Hand"))
+        {
+            stopped = true;
         }
     }
 }

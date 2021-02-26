@@ -22,8 +22,8 @@ public class BallManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        x = Random.Range(-8f, 8f);
-        y = Random.Range(0f, 3f);
+        x = Random.Range(-0.5f, 0.5f);
+        y = Random.Range(0f, 1f);
         transform.position = new Vector3(x, y, z);
     }
 
@@ -58,8 +58,8 @@ public class BallManager : MonoBehaviour
         if (time > 1)
         {
             time = 0;
-            x = Random.Range(-8f, 8f);
-            y = Random.Range(0f, 3f);
+            x = Random.Range(-0.5f, 0.5f);
+            y = Random.Range(0f, 1f);
             z = 20;
             transform.position = new Vector3(x, y, z);
             stopped = false;

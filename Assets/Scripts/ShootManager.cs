@@ -20,8 +20,8 @@ public class ShootManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        x = Random.Range(-0.5f, 0.5f);
-        y = Random.Range(0f, 1f);
+        x = Random.Range(-1f, 1f);
+        y = Random.Range(-0.5f, 1f);
         transform.position = new Vector3(x, y, z);
     }
 

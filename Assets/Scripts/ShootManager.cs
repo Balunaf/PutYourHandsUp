@@ -21,7 +21,7 @@ public class ShootManager : MonoBehaviour
     void Start()
     {
         x = Random.Range(-1f, 1f);
-        y = Random.Range(-0.5f, 1f);
+        y = Random.Range(-0.5f, 0.5f);
         transform.position = new Vector3(x, y, z);
     }
 

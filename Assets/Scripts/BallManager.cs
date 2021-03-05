@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class BallManager : MonoBehaviour
 {
-    [SerializeField] MeshRenderer mesh;
+    public float x;
 
-    private float x;
+    public float y;
 
-    private float y;
-
-    private float z = 20;
+    public float z = 20;
 
     private bool stopped = false;
 
@@ -18,13 +16,15 @@ public class BallManager : MonoBehaviour
 
     private float time = 0;
 
-    private float totalTime = 0;
     // Start is called before the first frame update
     void Start()
     {
-        x = Random.Range(-0.5f, 0.5f);
-        y = Random.Range(0f, 1f);
-        transform.position = new Vector3(x, y, z);
+       
+    }
+
+    private void OnEnable()
+    {
+        //calcul de la force
     }
 
     // Update is called once per frame
@@ -58,18 +58,7 @@ public class BallManager : MonoBehaviour
         if (time > 1)
         {
             time = 0;
-            x = Random.Range(-0.5f, 0.5f);
-            y = Random.Range(0f, 1f);
-            z = 20;
-            transform.position = new Vector3(x, y, z);
-            stopped = false;
-            behind = false;
-        }
-        totalTime += Time.deltaTime;
-        if (totalTime > 180)
-        {
-            stopped = true;
-            time = 0;
+            Destroy(gameObject);
         }
     }
 

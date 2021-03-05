@@ -57,9 +57,6 @@ public class BallManager : MonoBehaviour
         if (stopped)
         {
             time += Time.deltaTime;
-            zf = Random.Range(9f, 11f);
-            yf = Random.Range(3f, 4f);
-            xf = Random.Range(-1f, 1f);
             t += Time.deltaTime;
             z += force.z * Time.deltaTime;
             y = yn -(3f * t * t) / 2 + force.y * t;
@@ -100,7 +97,11 @@ public class BallManager : MonoBehaviour
         if (other.CompareTag("Hand"))
         {
             stopped = true;
-            yn = - (3 * t * t) / 2 + force.y * t + yi;
+            yn = transform.position.y;
+            zf = Random.Range(2f, 3f);
+            yf = Random.Range(1f, 2f);
+            xf = Random.Range(-1f, 1f);
+            force = new Vector3(xf, yf, zf);
             t = 0;
         }
     }

@@ -100,7 +100,7 @@ public class BallManager : MonoBehaviour
         if (other.CompareTag("Hand"))
         {
             stopped = true;
-            yn = y - (3 * t * t) / 2 + force.y * t;
+            yn = y - (3 * t * t) / 2 + force.y * t + yi;
             t = 0;
         }
     }

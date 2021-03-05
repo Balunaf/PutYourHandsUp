@@ -10,12 +10,19 @@ public class BallManager : MonoBehaviour
 
     public float z = 20;
 
+    private float xf;
+
+    private float yf;
+
+    private float zf;
+
     private bool stopped = false;
 
     private bool behind = false;
 
     private float time = 0;
 
+    private float t = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +31,9 @@ public class BallManager : MonoBehaviour
 
     private void OnEnable()
     {
-        //calcul de la force
+        zf = Random.Range(9f, 11f);
+        yf = Random.Range(4f, 5f);
+        xf = Random.Range(0f, 0.5f);
     }
 
     // Update is called once per frame
@@ -46,7 +55,10 @@ public class BallManager : MonoBehaviour
             {
                 if (z > 0)
                 {
-                    z -= 10 * Time.deltaTime;
+                    t += Time.deltaTime;
+                    z -= zf * Time.deltaTime;
+                    y = -(5f * t * t)/2 + yf * t;
+                    x += xf * Time.deltaTime;
                     transform.position = new Vector3(x, y, z);
                 }
                 else

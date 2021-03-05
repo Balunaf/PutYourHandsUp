@@ -95,14 +95,15 @@ public class BallManager : MonoBehaviour
         if (other.CompareTag("Hand"))
         {
             stopped = true;
+            t = 0;
         }
     }
 
     bool isGoodForce(Vector3 f)
     {
-        float t = 19.3f / f.z;
-        float xfinal = x + f.x * t;
-        float yfinal = y - (3 * t * t) / 2 + f.y * t;
+        float tf = 19.3f / f.z;
+        float xfinal = x + f.x * tf;
+        float yfinal = y - (3 * tf * tf) / 2 + f.y * tf;
         if (xfinal > -0.75 && xfinal < 0.75)
         {
             if (yfinal > -0.37 && yfinal < 1.13)

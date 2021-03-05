@@ -10,6 +10,8 @@ public class BallManager : MonoBehaviour
 
     public float z = 20;
 
+    private float yi;
+
     private float xf;
 
     private float yf;
@@ -25,6 +27,8 @@ public class BallManager : MonoBehaviour
     private float t = 0;
 
     private Vector3 force;
+
+    private float yn;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +41,7 @@ public class BallManager : MonoBehaviour
         yf = Random.Range(3f, 4f);
         xf = Random.Range(-1f, 1f);
         force = new Vector3(xf, yf, zf);
+        yi = y;
         while (!isGoodForce(force))
         {
             zf = Random.Range(9f, 11f);
@@ -57,7 +62,7 @@ public class BallManager : MonoBehaviour
             xf = Random.Range(-1f, 1f);
             t += Time.deltaTime;
             z += force.z * Time.deltaTime;
-            y = -(3f * t * t) / 2 + force.y * t;
+            y = yn -(3f * t * t) / 2 + force.y * t;
             x += force.x * Time.deltaTime;
             transform.position = new Vector3(x, y, z);
         }
@@ -73,7 +78,7 @@ public class BallManager : MonoBehaviour
                 {
                     t += Time.deltaTime;
                     z -= force.z * Time.deltaTime;
-                    y = -(3f * t * t)/2 + force.y * t;
+                    y = -(3f * t * t)/2 + force.y * t + yi;
                     x += force.x * Time.deltaTime;
                     transform.position = new Vector3(x, y, z);
                 }
@@ -95,6 +100,7 @@ public class BallManager : MonoBehaviour
         if (other.CompareTag("Hand"))
         {
             stopped = true;
+            yn = y - (3 * t * t) / 2 + force.y * t;
             t = 0;
         }
     }

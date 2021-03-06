@@ -7,6 +7,9 @@ public class ShootManager : MonoBehaviour
     [SerializeField] private BallManager originalBall = null;
 
     [SerializeField] private float rateOfFire = 1;
+
+    [SerializeField] private ScoreManager score;
+
     public LineRenderer lineRenderer;
 
     public Canvas canvas;
@@ -51,6 +54,7 @@ public class ShootManager : MonoBehaviour
                 newBall.y = y;
                 newBall.z = z - 1;
                 newBall.gameObject.SetActive(true);
+                score.total += 1;
                 time = 0;
             }
         } 

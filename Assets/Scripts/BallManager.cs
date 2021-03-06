@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BallManager : MonoBehaviour
 {
+    [SerializeField] private ScoreManager score;
+
     public float x;
 
     public float y;
@@ -103,6 +105,7 @@ public class BallManager : MonoBehaviour
             xf = Random.Range(-1f, 1f);
             force = new Vector3(xf, yf, zf);
             t = 0;
+            score.score += 1;
         }
     }
 

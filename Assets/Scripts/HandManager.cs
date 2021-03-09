@@ -20,7 +20,7 @@ public class HandManager : MonoBehaviour
     {
         if (other.CompareTag("Ball"))
         {
-            score.score += 1;
+            score.arret += 1;
         }
     }
 }

@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField] private Text text_score;
 
-    public int score;
+    public int arret;
 
     public int total;
     // Start is called before the first frame update
@@ -19,6 +19,27 @@ public class ScoreManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text_score.text = score.ToString() + " / " + total.ToString();
+        if (arret < 5)
+        {
+            text_score.text = "C'est un bon début !\n" + arret.ToString() + " / " + total.ToString();
+        }
+        else
+        {
+            if (arret < 10)
+            {
+                text_score.text = "Pas mal !\n" + arret.ToString() + " / " + total.ToString();
+            }
+            else
+            {
+                if(arret < 15)
+                {
+                    text_score.text = "Bien !\n" + arret.ToString() + " / " + total.ToString();
+                }
+                else
+                {
+                    text_score.text = "Excellent !\n" + arret.ToString() + " / " + total.ToString();
+                }
+            }
+        }
     }
 }

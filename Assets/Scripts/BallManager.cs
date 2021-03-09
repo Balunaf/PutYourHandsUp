@@ -71,7 +71,7 @@ public class BallManager : MonoBehaviour
             }
             else
             {
-                if (z > 0)
+                if (z > -2)
                 {
                     t += Time.deltaTime;
                     z -= force.z * Time.deltaTime;

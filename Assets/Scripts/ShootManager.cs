@@ -8,7 +8,7 @@ public class ShootManager : MonoBehaviour
 
     [SerializeField] private float rateOfFire = 1;
 
-    [SerializeField] ScoreManager score;
+    [SerializeField] private ScoreManager score;
 
     public LineRenderer lineRenderer;
 

@@ -20,7 +20,8 @@ public class HandManager : MonoBehaviour
     {
         if (other.CompareTag("Ball"))
         {
-            score.arret += 1;
+            Debug.Log("ok");
+            score.arret += 0.5f;
         }
     }
 }

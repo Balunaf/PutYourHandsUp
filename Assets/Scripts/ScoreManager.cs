@@ -7,7 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
     [SerializeField] private Text text_score;
 
-    public float arret;
+    public int arret;
 
     public int total;
     // Start is called before the first frame update

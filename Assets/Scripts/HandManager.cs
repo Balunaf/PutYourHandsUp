@@ -21,7 +21,7 @@ public class HandManager : MonoBehaviour
         if (other.CompareTag("Ball"))
         {
             Debug.Log("ok");
-            score.arret += 0.5f;
+            score.arret += 1;
         }
     }
 }

@@ -7,6 +7,9 @@ public class ShootManager : MonoBehaviour
     [SerializeField] private BallManager originalBall = null;
 
     [SerializeField] private float rateOfFire = 1;
+
+    [SerializeField] ScoreManager score;
+
     public LineRenderer lineRenderer;
 
     public Canvas canvas;
@@ -43,6 +46,7 @@ public class ShootManager : MonoBehaviour
         {
             if (time > 3)
             {
+                score.total += 1;
                 x = Random.Range(-0.5f, 0.5f);
                 y = Random.Range(0f, 1f);
                 transform.position = new Vector3(x, y, z);

@@ -54,14 +54,6 @@ public class ShootManager : MonoBehaviour
                 newBall.x = x;
                 newBall.y = y;
                 newBall.z = z - 1;
-                if (LevelLoader.instance.right)
-                {
-                    newBall.right = true;
-                }
-                if (LevelLoader.instance.left)
-                {
-                    newBall.left = true;
-                }
                 newBall.gameObject.SetActive(true);
                 time = 0;
             }

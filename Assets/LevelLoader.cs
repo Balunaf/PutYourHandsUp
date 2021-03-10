@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-    public bool left;
+    public bool leftHand;
 
-    public bool right;
+    public bool rightHand;
 
     public static LevelLoader instance;
     private void Awake()

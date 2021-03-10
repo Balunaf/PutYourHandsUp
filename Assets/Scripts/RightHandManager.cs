@@ -14,7 +14,7 @@ public class RightHandManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (LevelLoader.instance.left)
+        if (LevelLoader.instance.leftHand)
         {
             gameObject.SetActive(false);
         }

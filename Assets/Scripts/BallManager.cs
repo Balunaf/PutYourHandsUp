@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class BallManager : MonoBehaviour
 {
-    public bool right = false;
+    private bool right = LevelLoader.instance.rightHand;
 
-    public bool left = false;
+    private bool left = LevelLoader.instance.leftHand;
 
     public float x;
 
@@ -125,7 +125,7 @@ public class BallManager : MonoBehaviour
             {
                 return true;
             }
-            if (!right && !left && xfinal > -0.75 && xfinal < 0.75)
+            if ((!right) && (!left) && xfinal > -0.75 && xfinal < 0.75)
             {
                 return true;
             }

@@ -23,9 +23,7 @@ public class LevelLoader : MonoBehaviour
 
     void Start()
     {
-        leftHand = false;
-        rightHand = false;
-        textMain.text = "Deux Mains";
+
     }
 
     public void ChangeHands()

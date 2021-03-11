@@ -17,6 +17,13 @@ public class LevelLoader : MonoBehaviour
         }
         else instance = this;
     }
+
+    void Start()
+    {
+        leftHand = false;
+        rightHand = true;
+    }
+
     public void LoadLevel(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);

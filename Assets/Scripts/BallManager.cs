@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class BallManager : MonoBehaviour
 {
-    [SerializeField] MeshRenderer mesh;
+    private bool right = LevelLoader.instance.rightHand;
 
-    private float x;
+    private bool left = LevelLoader.instance.leftHand;
 
-    private float y;
+    public float x;
 
-    private float z = 20;
+    public float y;
+
+    public float z = 20;
+
+    private float yi;
+
+    private float xf;
+
+    private float yf;
+
+    private float zf;
 
     private bool stopped = false;
 
@@ -18,13 +28,31 @@ public class BallManager : MonoBehaviour
 
     private float time = 0;
 
-    private float totalTime = 0;
+    private float t = 0;
+
+    private Vector3 force;
+
+    private float yn;
     // Start is called before the first frame update
     void Start()
     {
-        x = Random.Range(-0.5f, 0.5f);
-        y = Random.Range(0f, 1f);
-        transform.position = new Vector3(x, y, z);
+       
+    }
+
+    private void OnEnable()
+    {
+        zf = Random.Range(9f, 11f);
+        yf = Random.Range(3f, 4f);
+        xf = Random.Range(-1f, 1f);
+        force = new Vector3(xf, yf, zf);
+        yi = y;
+        while (!isGoodForce(force))
+        {
+            zf = Random.Range(9f, 11f);
+            yf = Random.Range(3f, 4f);
+            xf = Random.Range(-1f, 1f);
+            force = new Vector3(xf, yf, zf);
+        }
     }
 
     // Update is called once per frame
@@ -33,7 +61,10 @@ public class BallManager : MonoBehaviour
         if (stopped)
         {
             time += Time.deltaTime;
-            z += 5 * Time.deltaTime;
+            t += Time.deltaTime;
+            z += force.z * Time.deltaTime;
+            y = yn -(3f * t * t) / 2 + force.y * t;
+            x += force.x * Time.deltaTime;
             transform.position = new Vector3(x, y, z);
         }
         else
@@ -44,9 +75,12 @@ public class BallManager : MonoBehaviour
             }
             else
             {
-                if (z > 0)
+                if (z > -2)
                 {
-                    z -= 10 * Time.deltaTime;
+                    t += Time.deltaTime;
+                    z -= force.z * Time.deltaTime;
+                    y = -(3f * t * t)/2 + force.y * t + yi;
+                    x += force.x * Time.deltaTime;
                     transform.position = new Vector3(x, y, z);
                 }
                 else
@@ -58,18 +92,7 @@ public class BallManager : MonoBehaviour
         if (time > 1)
         {
             time = 0;
-            x = Random.Range(-0.5f, 0.5f);
-            y = Random.Range(0f, 1f);
-            z = 20;
-            transform.position = new Vector3(x, y, z);
-            stopped = false;
-            behind = false;
-        }
-        totalTime += Time.deltaTime;
-        if (totalTime > 180)
-        {
-            stopped = true;
-            time = 0;
+            Destroy(gameObject);
         }
     }
 
@@ -78,6 +101,35 @@ public class BallManager : MonoBehaviour
         if (other.CompareTag("Hand"))
         {
             stopped = true;
+            yn = transform.position.y;
+            zf = Random.Range(2f, 3f);
+            yf = Random.Range(1f, 2f);
+            xf = Random.Range(-1f, 1f);
+            force = new Vector3(xf, yf, zf);
+            t = 0;
         }
+    }
+
+    bool isGoodForce(Vector3 f)
+    {
+        float tf = 19.3f / f.z;
+        float xfinal = x + f.x * tf;
+        float yfinal = y - (3 * tf * tf) / 2 + f.y * tf;
+        if (yfinal > -0.37 && yfinal < 1)
+        {
+            if (right && xfinal > -0.25 && xfinal < 0.75)
+            {
+                return true;
+            }
+            if (left && xfinal > -0.75 && xfinal < 0.25)
+            {
+                return true;
+            }
+            if ((!right) && (!left) && xfinal > -0.75 && xfinal < 0.75)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

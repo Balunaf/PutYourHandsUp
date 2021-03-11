@@ -117,11 +117,11 @@ public class BallManager : MonoBehaviour
         float yfinal = y - (3 * tf * tf) / 2 + f.y * tf;
         if (yfinal > -0.37 && yfinal < 1)
         {
-            if (right && xfinal > -0.25 && xfinal < 0.75)
+            if (right && xfinal > 0 && xfinal < 0.75)
             {
                 return true;
             }
-            if (left && xfinal > -0.75 && xfinal < 0.25)
+            if (left && xfinal > -0.75 && xfinal < 0)
             {
                 return true;
             }

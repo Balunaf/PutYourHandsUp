@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuLoader : MonoBehaviour
 {
@@ -15,8 +16,8 @@ public class MenuLoader : MonoBehaviour
     {
         
     }
-    public void QuitGame()
+    public void LoadLevel(int sceneIndex)
     {
-        Application.Quit();
+        SceneManager.LoadScene(sceneIndex);
     }
 }

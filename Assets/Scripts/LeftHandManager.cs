@@ -35,10 +35,10 @@ public class LeftHandManager : MonoBehaviour
     {
         if (other.CompareTag("Ball") && time > 1 && !rightHand.rtouch)
         {
+            audioManager.HitBall();
             score.arret += 1;
             time = 0;
             ltouch = true;
-            audioManager.HitBall();
         }
     }
 }

@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d7169d1cc04b74d9af3ab14e998ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalBall: {fileID: 8134454194508506247, guid: a647fca5c992d12449971d9689c14ba7,
+  originalBall: {fileID: 3620321347558292246, guid: ec3e8f3ed27e2244caaedaf589590a03,
     type: 3}
   rateOfFire: 1
   score: {fileID: 1875156417}
@@ -1246,8 +1246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7188bac478c3aec4eae4f5d4e89c5805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: 0
-  right: 0
+  leftHand: 0
+  rightHand: 0
 --- !u!120 &854982665 stripped
 LineRenderer:
   m_CorrespondingSourceObject: {fileID: 120006741097097638, guid: a9d2de84afb308a4796cc671d3432b4d,

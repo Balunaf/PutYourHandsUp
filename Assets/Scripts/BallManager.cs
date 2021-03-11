@@ -115,7 +115,7 @@ public class BallManager : MonoBehaviour
         bool left = LevelLoader.instance.leftHand;
         if (yfinal > -0.37 && yfinal < 1)
         {
-            if ( && xfinal > 0 && xfinal < 0.75)
+            if ( right && xfinal > 0 && xfinal < 0.75)
             {
                 return true;
             }

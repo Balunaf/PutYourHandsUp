@@ -44,7 +44,7 @@ public class ShootManager : MonoBehaviour
         }
         else
         {
-            if (time > 3)
+            if (time > 3 && totalTime < 18)
             {
                 score.total += 1;
                 x = Random.Range(-0.5f, 0.5f);

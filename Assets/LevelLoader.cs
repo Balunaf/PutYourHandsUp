@@ -36,17 +36,20 @@ public class LevelLoader : MonoBehaviour
             rightHand = true;
             textMain.text = "Main droite";
         }
-        else if (!leftHand & rightHand)
-        {
-            leftHand = true;
-            rightHand = false;
-            textMain.text = "Main Gauche";
-        }
         else
         {
-            leftHand = false;
-            rightHand = false;
-            textMain.text = "Deux Mains";
+            if (!leftHand & rightHand)
+            {
+                leftHand = true;
+                rightHand = false;
+                textMain.text = "Main Gauche";
+            }
+            else
+            {
+                leftHand = false;
+                rightHand = false;
+                textMain.text = "Deux Mains";
+            }
         }
     }
 

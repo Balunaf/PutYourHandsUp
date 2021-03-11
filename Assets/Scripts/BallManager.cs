@@ -113,13 +113,13 @@ public class BallManager : MonoBehaviour
         float yfinal = y - (3 * tf * tf) / 2 + f.y * tf;
         bool right = LevelLoader.instance.rightHand;
         bool left = LevelLoader.instance.leftHand;
-        if (yfinal > -0.37 && yfinal < 1)
+        if (yfinal > -0.3 && yfinal < 0.6)
         {
-            if (right && xfinal > 0.25 && xfinal < 0.75)
+            if (right && xfinal > 0.25 && xfinal < 0.7)
             {
                 return true;
             }
-            if (left && xfinal > -0.75 && xfinal < -0.25)
+            if (left && xfinal > -0.7 && xfinal < -0.25)
             {
                 return true;
             }

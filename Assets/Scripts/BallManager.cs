@@ -122,59 +122,49 @@ public class BallManager : MonoBehaviour
         float yfinal = y - (3 * tf * tf) / 2 + f.y * tf;
         bool right = LevelLoader.instance.rightHand;
         bool left = LevelLoader.instance.leftHand;
-        int dif = LevelLoader.instance.difficulte;
-        if (dif == 1)
+        if (LevelLoader.instance.difficulte == 1 && yfinal > -0.3f && yfinal < 0.4f)
         {
-            if (yfinal > -0.3 && yfinal < 0.4)
+            if (right && xfinal > 0 && xfinal < 0.4f)
             {
-                if (right && xfinal > 0 && xfinal < 0.4)
-                {
-                    return true;
-                }
-                if (left && xfinal > -0.4 && xfinal < 0)
-                {
-                    return true;
-                }
-                if ((!right) && (!left) && xfinal > -0.4 && xfinal < 0.4)
-                {
-                    return true;
-                }
+                return true;
+            }
+            if (left && xfinal > -0.4f && xfinal < 0)
+            {
+                return true;
+            }
+            if ((!right) && (!left) && xfinal > -0.4f && xfinal < 0.4f)
+            {
+                return true;
             }
         }
-        if (dif == 2)
+        if (LevelLoader.instance.difficulte == 2 && yfinal > 0 && yfinal < 0.5f)
         {
-            if (yfinal > 0 && yfinal < 0.5)
+            if (right && xfinal > 0.1f && xfinal < 0.5f)
             {
-                if (right && xfinal > 0.1 && xfinal < 0.5)
-                {
-                    return true;
-                }
-                if (left && xfinal > -0.5 && xfinal < -0.1)
-                {
-                    return true;
-                }
-                if ((!right) && (!left) && ((xfinal > -0.5 && xfinal < -0.1) || (xfinal > 0.1 && xfinal < 0.5)))
-                {
-                    return true;
-                }
+                return true;
+            }
+            if (left && xfinal > -0.5f && xfinal < -0.1f)
+            {
+                return true;
+            }
+            if ((!right) && (!left) && ((xfinal > -0.5f && xfinal < -0.1f) || (xfinal > 0.1f && xfinal < 0.5f)))
+            {
+                return true;
             }
         }
-        if (dif == 3)
+        if (LevelLoader.instance.difficulte == 3 && yfinal > 0.3f && yfinal < 0.6f)
         {
-            if (yfinal > 0.3 && yfinal < 0.6)
+            if (right && xfinal > 0.2f && xfinal < 0.6f)
             {
-                if (right && xfinal > 0.2 && xfinal < 0.6)
-                {
-                    return true;
-                }
-                if (left && xfinal > -0.6 && xfinal < -0.2)
-                {
-                    return true;
-                }
-                if ((!right) && (!left) && ((xfinal > -0.6 && xfinal < -0.2) || (xfinal > 0.2 && xfinal < 0.6)))
-                {
-                    return true;
-                }
+                return true;
+            }
+            if (left && xfinal > -0.6f && xfinal < -0.2f)
+            {
+                return true;
+            }
+            if ((!right) && (!left) && ((xfinal > -0.6f && xfinal < -0.2f) || (xfinal > 0.2f && xfinal < 0.6f)))
+            {
+                return true;
             }
         }
         return false;

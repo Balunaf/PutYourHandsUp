@@ -29,6 +29,7 @@ public class ShootManager : MonoBehaviour
         x = Random.Range(-1f, 1f);
         y = Random.Range(-0.5f, 0.5f);
         transform.position = new Vector3(x, y, z);
+        NewBall();
     }
 
     // Update is called once per frame
@@ -44,17 +45,20 @@ public class ShootManager : MonoBehaviour
         }
         else
         {
-            if (LevelLoader.instance.difficulte == 1 && time > 6)
+            if (LevelLoader.instance.difficulte == 1 && time > 8)
             {
                 NewBall();
+                time = 0;
             }
-            if (LevelLoader.instance.difficulte == 2 && time > 4)
+            if (LevelLoader.instance.difficulte == 2 && time > 6)
             {
                 NewBall();
+                time = 0;
             }
-            if (LevelLoader.instance.difficulte == 3 && time > 3)
+            if (LevelLoader.instance.difficulte == 3 && time > 5)
             {
                 NewBall();
+                time = 0;
             }
         } 
     }
@@ -69,6 +73,5 @@ public class ShootManager : MonoBehaviour
         newBall.y = y;
         newBall.z = z - 1;
         newBall.gameObject.SetActive(true);
-        time = 0;
     }
 }

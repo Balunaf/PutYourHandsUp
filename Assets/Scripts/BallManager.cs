@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class BallManager : MonoBehaviour
 {
-    private bool right = LevelLoader.instance.rightHand;
-
-    private bool left = LevelLoader.instance.leftHand;
-
     public float x;
 
     public float y;
@@ -124,13 +120,15 @@ public class BallManager : MonoBehaviour
         float tf = 19.3f / f.z;
         float xfinal = x + f.x * tf;
         float yfinal = y - (3 * tf * tf) / 2 + f.y * tf;
-        if (yfinal > -0.37 && yfinal < 1)
+        bool right = LevelLoader.instance.rightHand;
+        bool left = LevelLoader.instance.leftHand;
+        if (yfinal > -0.3 && yfinal < 0.6)
         {
-            if (right && xfinal > -0.25 && xfinal < 0.75)
+            if (right && xfinal > 0.25 && xfinal < 0.7)
             {
                 return true;
             }
-            if (left && xfinal > -0.75 && xfinal < 0.25)
+            if (left && xfinal > -0.7 && xfinal < -0.25)
             {
                 return true;
             }

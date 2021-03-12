@@ -29,6 +29,7 @@ public class LeftHandManager : MonoBehaviour
         if (time > 1)
         {
             ltouch = false;
+            OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.LTouch)
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -39,6 +40,7 @@ public class LeftHandManager : MonoBehaviour
             score.arret += 1;
             time = 0;
             ltouch = true;
+            OVRInput.SetControllerVibration(0.1, 1, OVRInput.Controller.LTouch)
         }
     }
 }

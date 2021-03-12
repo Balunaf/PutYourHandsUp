@@ -44,8 +44,7 @@ public class ShootManager : MonoBehaviour
         }
         else
         {
-            int dif = LevelLoader.instance.difficulte;
-            if (dif == 1)
+            if (LevelLoader.instance.difficulte == 1)
             {
                 if (time > 6)
                 {
@@ -60,34 +59,37 @@ public class ShootManager : MonoBehaviour
                     time = 0;
                 }
             }
-            if (dif == 2)
+            else
             {
-                if (time > 4)
+                if (LevelLoader.instance.difficulte == 2)
                 {
-                    x = Random.Range(-0.5f, 0.5f);
-                    y = Random.Range(0f, 1f);
-                    transform.position = new Vector3(x, y, z);
-                    var newBall = Instantiate(originalBall, transform.position, transform.rotation);
-                    newBall.x = x;
-                    newBall.y = y;
-                    newBall.z = z - 1;
-                    newBall.gameObject.SetActive(true);
-                    time = 0;
+                    if (time > 4)
+                    {
+                        x = Random.Range(-0.5f, 0.5f);
+                        y = Random.Range(0f, 1f);
+                        transform.position = new Vector3(x, y, z);
+                        var newBall = Instantiate(originalBall, transform.position, transform.rotation);
+                        newBall.x = x;
+                        newBall.y = y;
+                        newBall.z = z - 1;
+                        newBall.gameObject.SetActive(true);
+                        time = 0;
+                    }
                 }
-            }
-            if (dif == 3)
-            {
-                if (time > 3)
+                else
                 {
-                    x = Random.Range(-0.5f, 0.5f);
-                    y = Random.Range(0f, 1f);
-                    transform.position = new Vector3(x, y, z);
-                    var newBall = Instantiate(originalBall, transform.position, transform.rotation);
-                    newBall.x = x;
-                    newBall.y = y;
-                    newBall.z = z - 1;
-                    newBall.gameObject.SetActive(true);
-                    time = 0;
+                    if (time > 3)
+                    {
+                        x = Random.Range(-0.5f, 0.5f);
+                        y = Random.Range(0f, 1f);
+                        transform.position = new Vector3(x, y, z);
+                        var newBall = Instantiate(originalBall, transform.position, transform.rotation);
+                        newBall.x = x;
+                        newBall.y = y;
+                        newBall.z = z - 1;
+                        newBall.gameObject.SetActive(true);
+                        time = 0;
+                    }
                 }
             }
         } 

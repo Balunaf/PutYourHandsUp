@@ -109,7 +109,7 @@ public class BallManager : MonoBehaviour
             force = new Vector3(xf, yf, zf);
             t = 0;
             //Sound playing
-            audiosource = GetComponent<AudioSource>();
+            audioSource = GetComponent<AudioSource>();
             audioSource.clip = hit;
             audioSource.Play();
         }

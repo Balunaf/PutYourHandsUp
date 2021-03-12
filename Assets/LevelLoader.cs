@@ -11,6 +11,8 @@ public class LevelLoader : MonoBehaviour
 
     public bool rightHand;
 
+    public int difficulte;
+
     public static LevelLoader instance;
     private void Awake()
     {
@@ -26,7 +28,7 @@ public class LevelLoader : MonoBehaviour
     {
         leftHand = false;
         rightHand = false;
-        textMain.text = "Deux Mains";
+        textMain.text = "DEUX MAINS";
     }
 
     public void ChangeHands()
@@ -35,7 +37,7 @@ public class LevelLoader : MonoBehaviour
         {
             leftHand = false;
             rightHand = true;
-            textMain.text = "Main droite";
+            textMain.text = "MAIN DROITE";
         }
         else
         {
@@ -43,13 +45,13 @@ public class LevelLoader : MonoBehaviour
             {
                 leftHand = true;
                 rightHand = false;
-                textMain.text = "Main Gauche";
+                textMain.text = "MAIN GAUCHE";
             }
             else
             {
                 leftHand = false;
                 rightHand = false;
-                textMain.text = "Deux Mains";
+                textMain.text = "DEUX MAINS";
             }
         }
     }

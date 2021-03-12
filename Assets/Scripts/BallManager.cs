@@ -113,19 +113,59 @@ public class BallManager : MonoBehaviour
         float yfinal = y - (3 * tf * tf) / 2 + f.y * tf;
         bool right = LevelLoader.instance.rightHand;
         bool left = LevelLoader.instance.leftHand;
-        if (yfinal > -0.3 && yfinal < 0.6)
+        int dif = LevelLoader.instance.difficulte;
+        if (dif == 1)
         {
-            if (right && xfinal > 0.25 && xfinal < 0.7)
+            if (yfinal > -0.3 && yfinal < 0.4)
             {
-                return true;
+                if (right && xfinal > 0 && xfinal < 0.4)
+                {
+                    return true;
+                }
+                if (left && xfinal > -0.4 && xfinal < 0)
+                {
+                    return true;
+                }
+                if ((!right) && (!left) && xfinal > -0.4 && xfinal < 0.4)
+                {
+                    return true;
+                }
             }
-            if (left && xfinal > -0.7 && xfinal < -0.25)
+        }
+        if (dif == 2)
+        {
+            if (yfinal > 0 && yfinal < 0.5)
             {
-                return true;
+                if (right && xfinal > 0.1 && xfinal < 0.5)
+                {
+                    return true;
+                }
+                if (left && xfinal > -0.5 && xfinal < -0.1)
+                {
+                    return true;
+                }
+                if ((!right) && (!left) && ((xfinal > -0.5 && xfinal < -0.1) || (xfinal > 0.1 && xfinal < 0.5)))
+                {
+                    return true;
+                }
             }
-            if ((!right) && (!left) && xfinal > -0.75 && xfinal < 0.75)
+        }
+        if (dif == 3)
+        {
+            if (yfinal > 0.3 && yfinal < 0.6)
             {
-                return true;
+                if (right && xfinal > 0.2 && xfinal < 0.6)
+                {
+                    return true;
+                }
+                if (left && xfinal > -0.6 && xfinal < -0.2)
+                {
+                    return true;
+                }
+                if ((!right) && (!left) && ((xfinal > -0.6 && xfinal < -0.2) || (xfinal > 0.2 && xfinal < 0.6)))
+                {
+                    return true;
+                }
             }
         }
         return false;

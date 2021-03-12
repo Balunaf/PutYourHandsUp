@@ -218,7 +218,7 @@ MonoBehaviour:
     type: 3}
   rateOfFire: 1
   score: {fileID: 1875156417}
-  audioManager: {fileID: 0}
+  audioManager: {fileID: 1863890292}
   lineRenderer: {fileID: 854982665}
   canvas: {fileID: 1875156415}
 --- !u!65 &322155778

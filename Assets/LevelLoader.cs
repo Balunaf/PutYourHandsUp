@@ -7,6 +7,8 @@ public class LevelLoader : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI textMain;
 
+    [SerializeField] private TextMeshProUGUI textDifficulte;
+
     public bool leftHand;
 
     public bool rightHand;
@@ -26,6 +28,7 @@ public class LevelLoader : MonoBehaviour
 
     void Start()
     {
+        difficulte = 1;
         leftHand = false;
         rightHand = false;
         textMain.text = "DEUX MAINS";
@@ -52,6 +55,27 @@ public class LevelLoader : MonoBehaviour
                 leftHand = false;
                 rightHand = false;
                 textMain.text = "DEUX MAINS";
+            }
+        }
+    }
+    public void ChangeDifficulty()
+    {
+        if (difficulte == 1)
+        {
+            difficulte = 2;
+            textDifficulte.text = "MOYEN";
+        }
+        else
+        {
+            if (difficulte == 2)
+            {
+                difficulte = 3;
+                textDifficulte.text = "DIFFICILE";
+            }
+            else
+            {
+                difficulte = 1;
+                textDifficulte.text = "FACILE";
             }
         }
     }

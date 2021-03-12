@@ -29,6 +29,11 @@ public class BallManager : MonoBehaviour
     private Vector3 force;
 
     private float yn;
+
+    //Sound variables
+    private AudioSource audioSource;
+    [SerializeField] private AudioClip hit;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -103,6 +108,10 @@ public class BallManager : MonoBehaviour
             xf = Random.Range(-1f, 1f);
             force = new Vector3(xf, yf, zf);
             t = 0;
+            //Sound playing
+            audioSource = GetComponent<AudioSource>();
+            audioSource.clip = hit;
+            audioSource.Play();
         }
     }
 

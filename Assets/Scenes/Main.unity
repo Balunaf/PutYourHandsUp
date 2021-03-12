@@ -1559,7 +1559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMain: {fileID: 1056347942}
-  textDifficulte: {fileID: 0}
+  textDifficulte: {fileID: 417688517}
   leftHand: 0
   rightHand: 0
   difficulte: 0

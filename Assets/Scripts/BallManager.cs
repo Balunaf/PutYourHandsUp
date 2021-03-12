@@ -43,14 +43,14 @@ public class BallManager : MonoBehaviour
     private void OnEnable()
     {
         zf = Random.Range(9f, 11f);
-        yf = Random.Range(3f, 4f);
+        yf = Random.Range(2f, 4f);
         xf = Random.Range(-1f, 1f);
         force = new Vector3(xf, yf, zf);
         yi = y;
         while (!isGoodForce(force))
         {
             zf = Random.Range(9f, 11f);
-            yf = Random.Range(3f, 4f);
+            yf = Random.Range(2f, 4f);
             xf = Random.Range(-1f, 1f);
             force = new Vector3(xf, yf, zf);
         }

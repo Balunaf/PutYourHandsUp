@@ -10,7 +10,7 @@ public class ShootManager : MonoBehaviour
 
     [SerializeField] private ScoreManager score;
 
-    [SerializeField] private AudioManager audio;
+    [SerializeField] private AudioManager audioManager;
 
     public LineRenderer lineRenderer;
 
@@ -47,17 +47,17 @@ public class ShootManager : MonoBehaviour
         }
         else
         {
-            if (LevelLoader.instance.difficulte == 1 && time > 8)
+            if (time > 8 && LevelLoader.instance.difficulte == 1)
             {
                 NewBall();
                 time = 0;
             }
-            if (LevelLoader.instance.difficulte == 2 && time > 6)
+            if (time > 6 && LevelLoader.instance.difficulte == 2)
             {
                 NewBall();
                 time = 0;
             }
-            if (LevelLoader.instance.difficulte == 3 && time > 5)
+            if (time > 5 && LevelLoader.instance.difficulte == 3)
             {
                 NewBall();
                 time = 0;
@@ -67,7 +67,7 @@ public class ShootManager : MonoBehaviour
 
     private void NewBall()
     {
-        audio.SendBall();
+        audioManager.SendBall();
         x = Random.Range(-0.5f, 0.5f);
         y = Random.Range(0f, 1f);
         transform.position = new Vector3(x, y, z);

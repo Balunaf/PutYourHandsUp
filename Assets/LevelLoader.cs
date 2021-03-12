@@ -29,6 +29,7 @@ public class LevelLoader : MonoBehaviour
     void Start()
     {
         difficulte = 1;
+        textDifficulte.text = "FACILE (22 BALLES)";
         leftHand = false;
         rightHand = false;
         textMain.text = "DEUX MAINS";

@@ -31,13 +31,16 @@ public class BallManager : MonoBehaviour
     private float yn;
 
     //Sound variables
-    private AudioSource audioSource;
-    [SerializeField] private AudioClip hit;
+    [SerializeField] private AudioSource sourcePassed;
+
+    [SerializeField] private AudioClip passed;
+
+    private bool played;
 
     // Start is called before the first frame update
     void Start()
     {
-       
+        played = false;
     }
 
     private void OnEnable()
@@ -95,6 +98,10 @@ public class BallManager : MonoBehaviour
             time = 0;
             Destroy(gameObject);
         }
+        if (z < 0.7f && !played)
+        {
+            PassedBall();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -108,10 +115,6 @@ public class BallManager : MonoBehaviour
             xf = Random.Range(-1f, 1f);
             force = new Vector3(xf, yf, zf);
             t = 0;
-            //Sound playing
-            audioSource = GetComponent<AudioSource>();
-            audioSource.clip = hit;
-            audioSource.Play();
         }
     }
 
@@ -168,5 +171,11 @@ public class BallManager : MonoBehaviour
             }
         }
         return false;
+    }
+    private void PassedBall()
+    {
+        sourcePassed.loop = false;
+        sourcePassed.PlayOneShot(passed);
+        played = true;
     }
 }

@@ -91,16 +91,16 @@ public class BallManager : MonoBehaviour
                 {
                     behind = true;
                 }
-            }  
+            }
+            if (z < 1 && !played)
+            {
+                PassedBall();
+            }
         }
         if (time > 1)
         {
             time = 0;
             Destroy(gameObject);
-        }
-        if (z < 0.7f && !played)
-        {
-            PassedBall();
         }
     }
 

@@ -129,7 +129,7 @@ MonoBehaviour:
   y: 0
   z: 20
   sourcePassed: {fileID: 7214322062344217906}
-  passed: {fileID: 8300000, guid: c623855e4c5458b47a2c2241a6a1a0cf, type: 3}
+  passed: {fileID: 8300000, guid: bf3709f7b655668498c6a973e4f97ec3, type: 3}
 --- !u!1 &6671737505689278447
 GameObject:
   m_ObjectHideFlags: 0

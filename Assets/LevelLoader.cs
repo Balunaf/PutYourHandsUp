@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class LevelLoader : MonoBehaviour
 {
-    [SerializeField] private Text textMain;
+    [SerializeField] private TextMeshProUGUI textMain;
 
     public bool leftHand;
 

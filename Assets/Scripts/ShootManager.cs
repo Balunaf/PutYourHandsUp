@@ -10,6 +10,8 @@ public class ShootManager : MonoBehaviour
 
     [SerializeField] private ScoreManager score;
 
+    [SerializeField] private AudioManager audio;
+
     public LineRenderer lineRenderer;
 
     public Canvas canvas;
@@ -65,6 +67,7 @@ public class ShootManager : MonoBehaviour
 
     private void NewBall()
     {
+        audio.SendBall();
         x = Random.Range(-0.5f, 0.5f);
         y = Random.Range(0f, 1f);
         transform.position = new Vector3(x, y, z);

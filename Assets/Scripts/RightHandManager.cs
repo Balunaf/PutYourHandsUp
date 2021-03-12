@@ -26,6 +26,10 @@ public class RightHandManager : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
+        if (time > 0.05)
+        {
+            OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
+        }
         if (time > 1)
         {
             rtouch = false;
@@ -39,6 +43,7 @@ public class RightHandManager : MonoBehaviour
             score.arret += 1;
             time = 0;
             rtouch = true;
+            OVRInput.SetControllerVibration(0.5f, 1, OVRInput.Controller.RTouch);
         }
     }
 }

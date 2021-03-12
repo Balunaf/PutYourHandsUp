@@ -13,25 +13,25 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        UpdateTotal();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (arret < 5)
+        if (arret < total/4)
         {
             text_score.text = "C'est un bon début !\n" + arret.ToString() + " / " + total.ToString();
         }
         else
         {
-            if (arret < 10)
+            if (arret < total/2)
             {
                 text_score.text = "Pas mal !\n" + arret.ToString() + " / " + total.ToString();
             }
             else
             {
-                if(arret < 15)
+                if(arret < (3*total)/4)
                 {
                     text_score.text = "Bien !\n" + arret.ToString() + " / " + total.ToString();
                 }
@@ -40,6 +40,23 @@ public class ScoreManager : MonoBehaviour
                     text_score.text = "Excellent !\n" + arret.ToString() + " / " + total.ToString();
                 }
             }
+        }
+    }
+
+    private void UpdateTotal()
+    {
+        int dif = LevelLoader.instance.difficulte;
+        if (dif == 1)
+        {
+            total = 22;
+        }
+        if (dif == 2)
+        {
+            total = 29;
+        }
+        if (dif == 3)
+        {
+            total = 35;
         }
     }
 }

@@ -29,6 +29,7 @@ public class RightHandManager : MonoBehaviour
         if (time > 1)
         {
             rtouch = false;
+            OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.RTouch);
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -39,6 +40,7 @@ public class RightHandManager : MonoBehaviour
             score.arret += 1;
             time = 0;
             rtouch = true;
+            OVRInput.SetControllerVibration(0.1, 1, OVRInput.Controller.RTouch);
         }
     }
 }

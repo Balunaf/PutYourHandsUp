@@ -26,10 +26,13 @@ public class LeftHandManager : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
+        if (time > 0.05)
+        {
+            OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.LTouch);
+        }
         if (time > 1)
         {
             ltouch = false;
-            OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.LTouch)
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -40,7 +43,7 @@ public class LeftHandManager : MonoBehaviour
             score.arret += 1;
             time = 0;
             ltouch = true;
-            OVRInput.SetControllerVibration(0.1, 1, OVRInput.Controller.LTouch)
+            OVRInput.SetControllerVibration(0.5f, 1, OVRInput.Controller.LTouch);
         }
     }
 }

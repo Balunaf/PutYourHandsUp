@@ -63,19 +63,19 @@ public class LevelLoader : MonoBehaviour
         if (difficulte == 1)
         {
             difficulte = 2;
-            textDifficulte.text = "MOYEN";
+            textDifficulte.text = "MOYEN (29 BALLES)";
         }
         else
         {
             if (difficulte == 2)
             {
                 difficulte = 3;
-                textDifficulte.text = "DIFFICILE";
+                textDifficulte.text = "DIFFICILE (35 BALLES)";
             }
             else
             {
                 difficulte = 1;
-                textDifficulte.text = "FACILE";
+                textDifficulte.text = "FACILE (22 BALLES)";
             }
         }
     }

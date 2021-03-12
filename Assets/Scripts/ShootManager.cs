@@ -44,54 +44,31 @@ public class ShootManager : MonoBehaviour
         }
         else
         {
-            if (LevelLoader.instance.difficulte == 1)
+            if (LevelLoader.instance.difficulte == 1 && time > 6)
             {
-                if (time > 6)
-                {
-                    x = Random.Range(-0.5f, 0.5f);
-                    y = Random.Range(0f, 1f);
-                    transform.position = new Vector3(x, y, z);
-                    var newBall = Instantiate(originalBall, transform.position, transform.rotation);
-                    newBall.x = x;
-                    newBall.y = y;
-                    newBall.z = z - 1;
-                    newBall.gameObject.SetActive(true);
-                    time = 0;
-                }
+                NewBall();
             }
-            else
+            if (LevelLoader.instance.difficulte == 2 && time > 4)
             {
-                if (LevelLoader.instance.difficulte == 2)
-                {
-                    if (time > 4)
-                    {
-                        x = Random.Range(-0.5f, 0.5f);
-                        y = Random.Range(0f, 1f);
-                        transform.position = new Vector3(x, y, z);
-                        var newBall = Instantiate(originalBall, transform.position, transform.rotation);
-                        newBall.x = x;
-                        newBall.y = y;
-                        newBall.z = z - 1;
-                        newBall.gameObject.SetActive(true);
-                        time = 0;
-                    }
-                }
-                else
-                {
-                    if (time > 3)
-                    {
-                        x = Random.Range(-0.5f, 0.5f);
-                        y = Random.Range(0f, 1f);
-                        transform.position = new Vector3(x, y, z);
-                        var newBall = Instantiate(originalBall, transform.position, transform.rotation);
-                        newBall.x = x;
-                        newBall.y = y;
-                        newBall.z = z - 1;
-                        newBall.gameObject.SetActive(true);
-                        time = 0;
-                    }
-                }
+                NewBall();
+            }
+            if (LevelLoader.instance.difficulte == 3 && time > 3)
+            {
+                NewBall();
             }
         } 
+    }
+
+    private void NewBall()
+    {
+        x = Random.Range(-0.5f, 0.5f);
+        y = Random.Range(0f, 1f);
+        transform.position = new Vector3(x, y, z);
+        var newBall = Instantiate(originalBall, transform.position, transform.rotation);
+        newBall.x = x;
+        newBall.y = y;
+        newBall.z = z - 1;
+        newBall.gameObject.SetActive(true);
+        time = 0;
     }
 }

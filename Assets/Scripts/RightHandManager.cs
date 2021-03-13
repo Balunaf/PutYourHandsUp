@@ -10,6 +10,8 @@ public class RightHandManager : MonoBehaviour
 
     [SerializeField] private AudioManager audioManager;
 
+    [SerializeField] private ScoreUpdate scoreUpdate;
+
     private float time;
 
     public bool rtouch = false;
@@ -40,6 +42,7 @@ public class RightHandManager : MonoBehaviour
         if (other.CompareTag("Ball") && time > 1 && !leftHand.ltouch)
         {
             audioManager.HitBall();
+            scoreUpdate.arret += 1;
             score.arret += 1;
             time = 0;
             rtouch = true;

@@ -3007,7 +3007,7 @@ MonoBehaviour:
   score: {fileID: 1875156417}
   leftHand: {fileID: 1863890282}
   audioManager: {fileID: 1863890292}
-  scoreUpdate: {fileID: 0}
+  scoreUpdate: {fileID: 1901795907}
   rtouch: 0
 --- !u!114 &1863890282
 MonoBehaviour:
@@ -3024,7 +3024,7 @@ MonoBehaviour:
   score: {fileID: 1875156417}
   rightHand: {fileID: 1863890281}
   audioManager: {fileID: 1863890292}
-  scoreUpdate: {fileID: 0}
+  scoreUpdate: {fileID: 1901795907}
   ltouch: 0
 --- !u!82 &1863890283
 AudioSource:

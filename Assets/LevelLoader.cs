@@ -9,6 +9,8 @@ public class LevelLoader : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI textDifficulte;
 
+    [SerializeField] private Text stats;
+
     public bool leftHand;
 
     public bool rightHand;
@@ -33,6 +35,8 @@ public class LevelLoader : MonoBehaviour
         leftHand = false;
         rightHand = false;
         textMain.text = "DEUX MAINS";
+        GameData data = SaveSystem.LoadData();
+        stats.text = "Parties jouée : " + data.numberGames.ToString() + "\n Meilleur score : " + data.highScoreEasy.ToString();
     }
 
     public void ChangeHands()

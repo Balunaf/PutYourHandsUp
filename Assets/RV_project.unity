@@ -511,7 +511,7 @@ Transform:
   - {fileID: 450052385}
   - {fileID: 1394870590}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &463930439 stripped
 Transform:
@@ -1666,6 +1666,17 @@ MonoBehaviour:
       - m_Target: {fileID: 1875156418}
         m_MethodName: LoadLevel
         m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1875156418}
+        m_MethodName: SaveData
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3289,6 +3300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0594d9854c114474fbc4a940ac5a07f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 1901795912}
+  score: {fileID: 1875156417}
 --- !u!114 &1875156419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3477,7 +3490,7 @@ RectTransform:
   - {fileID: 1481071035}
   - {fileID: 58399406}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

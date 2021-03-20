@@ -106,7 +106,17 @@ public class BallManager : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Hand"))
+        if (other.CompareTag("Hand") && LevelLoader.instance.game1)
+        {
+            stopped = true;
+            yn = transform.position.y;
+            zf = Random.Range(2f, 3f);
+            yf = Random.Range(1f, 2f);
+            xf = Random.Range(-1f, 1f);
+            force = new Vector3(xf, yf, zf);
+            t = 0;
+        }
+        if (other.CompareTag("Racket") && LevelLoader.instance.game2)
         {
             stopped = true;
             yn = transform.position.y;

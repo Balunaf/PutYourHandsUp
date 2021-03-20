@@ -39,11 +39,11 @@ public class RightHandManager : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Ball") && time > 1 && !leftHand.ltouch)
+        if (other.CompareTag("Ball") && time > 1 && !leftHand.ltouch && LevelLoader.instance.game1)
         {
+            score.arret += 1;
             audioManager.HitBall();
             scoreUpdate.arret += 1;
-            score.arret += 1;
             time = 0;
             rtouch = true;
             OVRInput.SetControllerVibration(0.5f, 1, OVRInput.Controller.RTouch);

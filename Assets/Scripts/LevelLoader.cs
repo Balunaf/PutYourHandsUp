@@ -11,6 +11,10 @@ public class LevelLoader : MonoBehaviour
 
     [SerializeField] private Canvas option;
 
+    public bool game1;
+
+    public bool game2;
+
     public bool leftHand;
 
     public bool rightHand;
@@ -34,6 +38,8 @@ public class LevelLoader : MonoBehaviour
         textDifficulte.text = "FACILE (22 BALLES)";
         leftHand = false;
         rightHand = false;
+        game1 = false;
+        game2 = false;
         textMain.text = "DEUX MAINS";
     }
 
@@ -85,6 +91,14 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadLevel(int sceneIndex)
     {
+        if (sceneIndex == 1)
+        {
+            game1 = true;
+        }
+        if (sceneIndex == 2)
+        {
+            game2 = true;
+        }
         SceneManager.LoadScene(sceneIndex);
     }
 

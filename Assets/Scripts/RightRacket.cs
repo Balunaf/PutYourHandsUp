@@ -1,24 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class LeftHandManager : MonoBehaviour
+public class RightRacket : MonoBehaviour
 {
     [SerializeField] private ScoreManager score;
 
-    [SerializeField] private RightHandManager rightHand;
+    [SerializeField] private LeftRacket leftRacket;
 
     [SerializeField] private AudioManager audioManager;
 
     [SerializeField] private ScoreUpdate scoreUpdate;
 
+    [SerializeField] private Rigidbody hand;
+
+    [SerializeField] private Text goodBall;
+
     private float time;
 
-    public bool ltouch = false;
+    public bool rtouch = false;
     // Start is called before the first frame update
     void Start()
     {
-        if (LevelLoader.instance.rightHand)
+        if (LevelLoader.instance.leftHand)
         {
             gameObject.SetActive(false);
         }
@@ -34,18 +39,26 @@ public class LeftHandManager : MonoBehaviour
         }
         if (time > 1)
         {
-            ltouch = false;
+            rtouch = false;
         }
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Ball") && time > 1 && !rightHand.rtouch && LevelLoader.instance.game1)
+        if (other.CompareTag("Ball") && time > 1 && !leftRacket.ltouch && LevelLoader.instance.game2)
         {
+            if (hand.velocity.z > 1)
+            {
+                scoreUpdate.arret += 1;
+                score.arret += 1;
+                goodBall.text = "Bon renvoi !";
+            }
+            else
+            {
+                goodBall.text = "Un peu plus fort la prochaine fois.";
+            }
             audioManager.HitBall();
-            scoreUpdate.arret += 1;
-            score.arret += 1;
             time = 0;
-            ltouch = true;
+            rtouch = true;
             OVRInput.SetControllerVibration(0.5f, 1, OVRInput.Controller.LTouch);
         }
     }

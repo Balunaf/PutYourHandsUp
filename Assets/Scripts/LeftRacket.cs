@@ -1,16 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class LeftHandManager : MonoBehaviour
+public class LeftRacket : MonoBehaviour
 {
     [SerializeField] private ScoreManager score;
 
-    [SerializeField] private RightHandManager rightHand;
+    [SerializeField] private RightRacket rightRacket;
 
     [SerializeField] private AudioManager audioManager;
 
     [SerializeField] private ScoreUpdate scoreUpdate;
+
+    [SerializeField] private Rigidbody hand;
+
+    [SerializeField] private Text goodBall;
 
     private float time;
 
@@ -39,11 +44,19 @@ public class LeftHandManager : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Ball") && time > 1 && !rightHand.rtouch && LevelLoader.instance.game1)
+        if (other.CompareTag("Ball") && time > 1 && !rightRacket.rtouch && LevelLoader.instance.game2)
         {
+            if (hand.velocity.z > 1)
+            {
+                scoreUpdate.arret += 1;
+                score.arret += 1;
+                goodBall.text = "Bon renvoi !";
+            }
+            else
+            {
+                goodBall.text = "Un peu plus fort la prochaine fois.";
+            }
             audioManager.HitBall();
-            scoreUpdate.arret += 1;
-            score.arret += 1;
             time = 0;
             ltouch = true;
             OVRInput.SetControllerVibration(0.5f, 1, OVRInput.Controller.LTouch);

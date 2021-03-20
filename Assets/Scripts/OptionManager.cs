@@ -19,7 +19,7 @@ public class OptionManager : MonoBehaviour
     {
         GameData data = SaveSystem.LoadData();
         stats.text = "Parties terminées : " + data.numberGames.ToString() + "\n"
-            + "Temps de jeu : " + data.timePlayed.ToString() + "\n"
+            + "Temps de jeu : " + (data.timePlayed/60).ToString() + "h" + (data.timePlayed - (data.timePlayed / 60)).ToString() + "\n"
             + "Meilleur score facile : " + data.highScoreEasy.ToString() + "\n"
             + "Meilleur score moyen : " + data.highScoreMedium.ToString() + "\n"
             + "Meilleur score difficle : " + data.highScoreDifficult.ToString() + "\n"

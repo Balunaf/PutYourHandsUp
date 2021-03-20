@@ -92,7 +92,7 @@ public class BallManager : MonoBehaviour
                     behind = true;
                 }
             }
-            if (z < 1.3 && !played)
+            if (z < 1.4 && !played)
             {
                 PassedBall();
             }

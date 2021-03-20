@@ -19,8 +19,10 @@ public class OptionManager : MonoBehaviour
     void Update()
     {
         GameData data = SaveSystem.LoadData();
-        stats.text = "Parties terminées : " + data.numberGames.ToString() + "\n"
-            + "Temps de jeu : " + data.timePlayed.ToString() + "\n"
+        if (data.timePlayed - 60 * (data.timePlayed / 60) < 10)
+        {
+            stats.text = "Parties terminées : " + data.numberGames.ToString() + "\n"
+            + "Temps de jeu : " + (data.timePlayed / 60).ToString() + "h0" + (data.timePlayed - 60 * (data.timePlayed / 60)).ToString() + "\n"
             + "Meilleur score facile : " + data.highScoreEasy.ToString() + "\n"
             + "Meilleur score moyen : " + data.highScoreMedium.ToString() + "\n"
             + "Meilleur score difficle : " + data.highScoreDifficult.ToString() + "\n"
@@ -30,6 +32,21 @@ public class OptionManager : MonoBehaviour
             + "Meilleur score main gauche facile : " + data.highScoreEasyLeft.ToString() + "\n"
             + "Meilleur score main gauche moyen : " + data.highScoreMediumLeft.ToString() + "\n"
             + "Meilleur score main gauche difficile : " + data.highScoreDifficultLeft.ToString();
+        }
+        else
+        {
+            stats.text = "Parties terminées : " + data.numberGames.ToString() + "\n"
+            + "Temps de jeu : " + (data.timePlayed / 60).ToString() + "h" + (data.timePlayed - 60 * (data.timePlayed / 60)).ToString() + "\n"
+            + "Meilleur score facile : " + data.highScoreEasy.ToString() + "\n"
+            + "Meilleur score moyen : " + data.highScoreMedium.ToString() + "\n"
+            + "Meilleur score difficle : " + data.highScoreDifficult.ToString() + "\n"
+            + "Meilleur score main droite facile : " + data.highScoreEasyRight.ToString() + "\n"
+            + "Meilleur score main droite moyen : " + data.highScoreMediumRight.ToString() + "\n"
+            + "Meilleur score main droite difficile : " + data.highScoreDifficultRight.ToString() + "\n"
+            + "Meilleur score main gauche facile : " + data.highScoreEasyLeft.ToString() + "\n"
+            + "Meilleur score main gauche moyen : " + data.highScoreMediumLeft.ToString() + "\n"
+            + "Meilleur score main gauche difficile : " + data.highScoreDifficultLeft.ToString();
+        }  
     }
 
     public void BackToMenu()

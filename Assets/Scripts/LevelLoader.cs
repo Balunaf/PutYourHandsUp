@@ -94,12 +94,13 @@ public class LevelLoader : MonoBehaviour
         if (sceneIndex == 1)
         {
             game1 = true;
+            SceneManager.LoadScene(sceneIndex);
         }
-        if (sceneIndex == 2)
+        if (sceneIndex == 2 && !(!rightHand && !leftHand))
         {
             game2 = true;
+            SceneManager.LoadScene(sceneIndex);
         }
-        SceneManager.LoadScene(sceneIndex);
     }
 
     public void QuitGame()

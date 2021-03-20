@@ -34,106 +34,303 @@ public class MenuLoader : MonoBehaviour
     {
         int currentScore = score.arret;
         GameData data = SaveSystem.LoadData();
-        int gamesPlayed = data.numberGames + 1;
-        int newTimePlayed = data.timePlayed + 3;
-        if (LevelLoader.instance.rightHand)
+        if (LevelLoader.instance.game1)
         {
-            if (LevelLoader.instance.difficulte == 1)
+            int gamesPlayed = data.numberGames + 1;
+            int newTimePlayed = data.timePlayed + 3;
+            if (LevelLoader.instance.rightHand)
             {
-                int maxScore = data.highScoreEasyRight;
-                int newMaxScore = maxScore;
-                if (currentScore > maxScore)
+                if (LevelLoader.instance.difficulte == 1)
                 {
-                    newMaxScore = currentScore;
+                    int maxScore = data.highScoreEasyRight;
+                    int newMaxScore = maxScore;
+                    if (currentScore > maxScore)
+                    {
+                        newMaxScore = currentScore;
+                    }
+                    SaveSystem.SaveData(gamesPlayed, newTimePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult,
+                        newMaxScore, data.highScoreMediumRight, data.highScoreDifficultRight,
+                        data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft,
+                        data.numberGames2, data.timePlayed2, data.highScoreEasy2, data.highScoreMedium2, data.highScoreDifficult2,
+                        data.highScoreEasyRight2, data.highScoreMediumRight2, data.highScoreDifficultRight2,
+                        data.highScoreEasyLeft2, data.highScoreMediumLeft2, data.highScoreDifficultLeft2);
                 }
-                SaveSystem.SaveData(gamesPlayed, newTimePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult, newMaxScore, data.highScoreMediumRight, data.highScoreDifficultRight, data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft);
+                if (LevelLoader.instance.difficulte == 2)
+                {
+                    int maxScore = data.highScoreMediumRight;
+                    int newMaxScore = maxScore;
+                    if (currentScore > maxScore)
+                    {
+                        newMaxScore = currentScore;
+                    }
+                    SaveSystem.SaveData(gamesPlayed, newTimePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult,
+                        data.highScoreEasyRight, newMaxScore, data.highScoreDifficultRight,
+                        data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft,
+                        data.numberGames2, data.timePlayed2, data.highScoreEasy2, data.highScoreMedium2, data.highScoreDifficult2,
+                        data.highScoreEasyRight2, data.highScoreMediumRight2, data.highScoreDifficultRight2,
+                        data.highScoreEasyLeft2, data.highScoreMediumLeft2, data.highScoreDifficultLeft2);
+                }
+                if (LevelLoader.instance.difficulte == 3)
+                {
+                    int maxScore = data.highScoreDifficultRight;
+                    int newMaxScore = maxScore;
+                    if (currentScore > maxScore)
+                    {
+                        newMaxScore = currentScore;
+                    }
+                    SaveSystem.SaveData(gamesPlayed, newTimePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult,
+                        data.highScoreEasyRight, data.highScoreMediumRight, newMaxScore,
+                        data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft,
+                        data.numberGames2, data.timePlayed2, data.highScoreEasy2, data.highScoreMedium2, data.highScoreDifficult2,
+                        data.highScoreEasyRight2, data.highScoreMediumRight2, data.highScoreDifficultRight2,
+                        data.highScoreEasyLeft2, data.highScoreMediumLeft2, data.highScoreDifficultLeft2);
+                }
             }
-            if (LevelLoader.instance.difficulte == 2)
+            if (LevelLoader.instance.leftHand)
             {
-                int maxScore = data.highScoreMediumRight;
-                int newMaxScore = maxScore;
-                if (currentScore > maxScore)
+                if (LevelLoader.instance.difficulte == 1)
                 {
-                    newMaxScore = currentScore;
+                    int maxScore = data.highScoreEasyLeft;
+                    int newMaxScore = maxScore;
+                    if (currentScore > maxScore)
+                    {
+                        newMaxScore = currentScore;
+                    }
+                    SaveSystem.SaveData(gamesPlayed, newTimePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult,
+                        data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight,
+                        newMaxScore, data.highScoreMediumLeft, data.highScoreDifficultLeft,
+                        data.numberGames2, data.timePlayed2, data.highScoreEasy2, data.highScoreMedium2, data.highScoreDifficult2,
+                        data.highScoreEasyRight2, data.highScoreMediumRight2, data.highScoreDifficultRight2,
+                        data.highScoreEasyLeft2, data.highScoreMediumLeft2, data.highScoreDifficultLeft2);
                 }
-                SaveSystem.SaveData(gamesPlayed, newTimePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult, data.highScoreEasyRight, newMaxScore, data.highScoreDifficultRight, data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft);
+                if (LevelLoader.instance.difficulte == 2)
+                {
+                    int maxScore = data.highScoreMediumLeft;
+                    int newMaxScore = maxScore;
+                    if (currentScore > maxScore)
+                    {
+                        newMaxScore = currentScore;
+                    }
+                    SaveSystem.SaveData(gamesPlayed, newTimePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult,
+                        data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight,
+                        data.highScoreEasyLeft, newMaxScore, data.highScoreDifficultLeft,
+                        data.numberGames2, data.timePlayed2, data.highScoreEasy2, data.highScoreMedium2, data.highScoreDifficult2,
+                        data.highScoreEasyRight2, data.highScoreMediumRight2, data.highScoreDifficultRight2,
+                        data.highScoreEasyLeft2, data.highScoreMediumLeft2, data.highScoreDifficultLeft2);
+                }
+                if (LevelLoader.instance.difficulte == 3)
+                {
+                    int maxScore = data.highScoreDifficultLeft;
+                    int newMaxScore = maxScore;
+                    if (currentScore > maxScore)
+                    {
+                        newMaxScore = currentScore;
+                    }
+                    SaveSystem.SaveData(gamesPlayed, newTimePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult,
+                        data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight,
+                        data.highScoreEasyLeft, data.highScoreMediumLeft, newMaxScore,
+                        data.numberGames2, data.timePlayed2, data.highScoreEasy2, data.highScoreMedium2, data.highScoreDifficult2,
+                        data.highScoreEasyRight2, data.highScoreMediumRight2, data.highScoreDifficultRight2,
+                        data.highScoreEasyLeft2, data.highScoreMediumLeft2, data.highScoreDifficultLeft2);
+                }
             }
-            if (LevelLoader.instance.difficulte == 3)
+            if (!LevelLoader.instance.leftHand && !LevelLoader.instance.rightHand)
             {
-                int maxScore = data.highScoreDifficultRight;
-                int newMaxScore = maxScore;
-                if (currentScore > maxScore)
+                if (LevelLoader.instance.difficulte == 1)
                 {
-                    newMaxScore = currentScore;
+                    int maxScore = data.highScoreEasy;
+                    int newMaxScore = maxScore;
+                    if (currentScore > maxScore)
+                    {
+                        newMaxScore = currentScore;
+                    }
+                    SaveSystem.SaveData(gamesPlayed, newTimePlayed, newMaxScore, data.highScoreMedium, data.highScoreDifficult,
+                        data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight,
+                        data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft,
+                        data.numberGames2, data.timePlayed2, data.highScoreEasy2, data.highScoreMedium2, data.highScoreDifficult2,
+                        data.highScoreEasyRight2, data.highScoreMediumRight2, data.highScoreDifficultRight2,
+                        data.highScoreEasyLeft2, data.highScoreMediumLeft2, data.highScoreDifficultLeft2);
                 }
-                SaveSystem.SaveData(gamesPlayed, newTimePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult, data.highScoreEasyRight, data.highScoreMediumRight, newMaxScore, data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft);
+                if (LevelLoader.instance.difficulte == 2)
+                {
+                    int maxScore = data.highScoreMedium;
+                    int newMaxScore = maxScore;
+                    if (currentScore > maxScore)
+                    {
+                        newMaxScore = currentScore;
+                    }
+                    SaveSystem.SaveData(gamesPlayed, newTimePlayed, data.highScoreEasy, newMaxScore, data.highScoreDifficult,
+                        data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight,
+                        data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft,
+                        data.numberGames2, data.timePlayed2, data.highScoreEasy2, data.highScoreMedium2, data.highScoreDifficult2,
+                        data.highScoreEasyRight2, data.highScoreMediumRight2, data.highScoreDifficultRight2,
+                        data.highScoreEasyLeft2, data.highScoreMediumLeft2, data.highScoreDifficultLeft2);
+                }
+                if (LevelLoader.instance.difficulte == 3)
+                {
+                    int maxScore = data.highScoreDifficult;
+                    int newMaxScore = maxScore;
+                    if (currentScore > maxScore)
+                    {
+                        newMaxScore = currentScore;
+                    }
+                    SaveSystem.SaveData(gamesPlayed, newTimePlayed, data.highScoreEasy, data.highScoreMedium, newMaxScore,
+                        data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight,
+                        data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft,
+                        data.numberGames2, data.timePlayed2, data.highScoreEasy2, data.highScoreMedium2, data.highScoreDifficult2,
+                        data.highScoreEasyRight2, data.highScoreMediumRight2, data.highScoreDifficultRight2,
+                        data.highScoreEasyLeft2, data.highScoreMediumLeft2, data.highScoreDifficultLeft2);
+                }
             }
         }
-        if (LevelLoader.instance.leftHand)
+        if (LevelLoader.instance.game2)
         {
-            if (LevelLoader.instance.difficulte == 1)
+            int gamesPlayed = data.numberGames2 + 1;
+            int newTimePlayed = data.timePlayed2 + 3;
+            if (LevelLoader.instance.rightHand)
             {
-                int maxScore = data.highScoreEasyLeft;
-                int newMaxScore = maxScore;
-                if (currentScore > maxScore)
+                if (LevelLoader.instance.difficulte == 1)
                 {
-                    newMaxScore = currentScore;
+                    int maxScore = data.highScoreEasyRight2;
+                    int newMaxScore = maxScore;
+                    if (currentScore > maxScore)
+                    {
+                        newMaxScore = currentScore;
+                    }
+                    SaveSystem.SaveData(data.numberGames, data.timePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult,
+                        data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight,
+                        data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft,
+                        gamesPlayed, newTimePlayed, data.highScoreEasy2, data.highScoreMedium2, data.highScoreDifficult2,
+                        newMaxScore, data.highScoreMediumRight2, data.highScoreDifficultRight2,
+                        data.highScoreEasyLeft2, data.highScoreMediumLeft2, data.highScoreDifficultLeft2);
                 }
-                SaveSystem.SaveData(gamesPlayed, newTimePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult, data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight, newMaxScore, data.highScoreMediumLeft, data.highScoreDifficultLeft);
+                if (LevelLoader.instance.difficulte == 2)
+                {
+                    int maxScore = data.highScoreMediumRight2;
+                    int newMaxScore = maxScore;
+                    if (currentScore > maxScore)
+                    {
+                        newMaxScore = currentScore;
+                    }
+                    SaveSystem.SaveData(data.numberGames, data.timePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult,
+                        data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight,
+                        data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft,
+                        gamesPlayed, newTimePlayed, data.highScoreEasy2, data.highScoreMedium2, data.highScoreDifficult2,
+                        data.highScoreEasyRight2, newMaxScore, data.highScoreDifficultRight2,
+                        data.highScoreEasyLeft2, data.highScoreMediumLeft2, data.highScoreDifficultLeft2);
+                }
+                if (LevelLoader.instance.difficulte == 3)
+                {
+                    int maxScore = data.highScoreDifficultRight2;
+                    int newMaxScore = maxScore;
+                    if (currentScore > maxScore)
+                    {
+                        newMaxScore = currentScore;
+                    }
+                    SaveSystem.SaveData(data.numberGames, data.timePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult,
+                        data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight,
+                        data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft,
+                        gamesPlayed, newTimePlayed, data.highScoreEasy2, data.highScoreMedium2, data.highScoreDifficult2,
+                        data.highScoreEasyRight2, data.highScoreMediumRight2, newMaxScore,
+                        data.highScoreEasyLeft2, data.highScoreMediumLeft2, data.highScoreDifficultLeft2);
+                }
             }
-            if (LevelLoader.instance.difficulte == 2)
+            if (LevelLoader.instance.leftHand)
             {
-                int maxScore = data.highScoreMediumLeft;
-                int newMaxScore = maxScore;
-                if (currentScore > maxScore)
+                if (LevelLoader.instance.difficulte == 1)
                 {
-                    newMaxScore = currentScore;
+                    int maxScore = data.highScoreEasyLeft2;
+                    int newMaxScore = maxScore;
+                    if (currentScore > maxScore)
+                    {
+                        newMaxScore = currentScore;
+                    }
+                    SaveSystem.SaveData(data.numberGames, data.timePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult,
+                        data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight,
+                        data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft,
+                        gamesPlayed, newTimePlayed, data.highScoreEasy2, data.highScoreMedium2, data.highScoreDifficult2,
+                        data.highScoreEasyRight2, data.highScoreMediumRight2, data.highScoreDifficultRight2,
+                        newMaxScore, data.highScoreMediumLeft2, data.highScoreDifficultLeft2);
                 }
-                SaveSystem.SaveData(gamesPlayed, newTimePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult, data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight, data.highScoreEasyLeft, newMaxScore, data.highScoreDifficultLeft);
+                if (LevelLoader.instance.difficulte == 2)
+                {
+                    int maxScore = data.highScoreMediumLeft2;
+                    int newMaxScore = maxScore;
+                    if (currentScore > maxScore)
+                    {
+                        newMaxScore = currentScore;
+                    }
+                    SaveSystem.SaveData(data.numberGames, data.timePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult,
+                        data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight,
+                        data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft,
+                        gamesPlayed, newTimePlayed, data.highScoreEasy2, data.highScoreMedium2, data.highScoreDifficult2,
+                        data.highScoreEasyRight2, data.highScoreMediumRight2, data.highScoreDifficultRight2,
+                        data.highScoreEasyLeft2, newMaxScore, data.highScoreDifficultLeft2);
+                }
+                if (LevelLoader.instance.difficulte == 3)
+                {
+                    int maxScore = data.highScoreDifficultLeft2;
+                    int newMaxScore = maxScore;
+                    if (currentScore > maxScore)
+                    {
+                        newMaxScore = currentScore;
+                    }
+                    SaveSystem.SaveData(data.numberGames, data.timePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult,
+                        data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight,
+                        data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft,
+                        gamesPlayed, newTimePlayed, data.highScoreEasy2, data.highScoreMedium2, data.highScoreDifficult2,
+                        data.highScoreEasyRight2, data.highScoreMediumRight2, data.highScoreDifficultRight2,
+                        data.highScoreEasyLeft2, data.highScoreMediumLeft2, newMaxScore);
+                }
             }
-            if (LevelLoader.instance.difficulte == 3)
+            if (!LevelLoader.instance.leftHand && !LevelLoader.instance.rightHand)
             {
-                int maxScore = data.highScoreDifficultLeft;
-                int newMaxScore = maxScore;
-                if (currentScore > maxScore)
+                if (LevelLoader.instance.difficulte == 1)
                 {
-                    newMaxScore = currentScore;
+                    int maxScore = data.highScoreEasy2;
+                    int newMaxScore = maxScore;
+                    if (currentScore > maxScore)
+                    {
+                        newMaxScore = currentScore;
+                    }
+                    SaveSystem.SaveData(data.numberGames, data.timePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult,
+                        data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight,
+                        data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft,
+                        gamesPlayed, newTimePlayed, newMaxScore, data.highScoreMedium2, data.highScoreDifficult2,
+                        data.highScoreEasyRight2, data.highScoreMediumRight2, data.highScoreDifficultRight2,
+                        data.highScoreEasyLeft2, data.highScoreMediumLeft2, data.highScoreDifficultLeft2);
                 }
-                SaveSystem.SaveData(gamesPlayed, newTimePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult, data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight, data.highScoreEasyLeft, data.highScoreMediumLeft, newMaxScore);
-            }
-        }
-        if(!LevelLoader.instance.leftHand && !LevelLoader.instance.rightHand)
-        {
-            if (LevelLoader.instance.difficulte == 1)
-            {
-                int maxScore = data.highScoreEasy;
-                int newMaxScore = maxScore;
-                if (currentScore > maxScore)
+                if (LevelLoader.instance.difficulte == 2)
                 {
-                    newMaxScore = currentScore;
+                    int maxScore = data.highScoreMedium2;
+                    int newMaxScore = maxScore;
+                    if (currentScore > maxScore)
+                    {
+                        newMaxScore = currentScore;
+                    }
+                    SaveSystem.SaveData(data.numberGames, data.timePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult,
+                        data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight,
+                        data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft,
+                        gamesPlayed, newTimePlayed, data.highScoreEasy2, newMaxScore, data.highScoreDifficult2,
+                        data.highScoreEasyRight2, data.highScoreMediumRight2, data.highScoreDifficultRight2,
+                        data.highScoreEasyLeft2, data.highScoreMediumLeft2, data.highScoreDifficultLeft2);
                 }
-                SaveSystem.SaveData(gamesPlayed, newTimePlayed, newMaxScore, data.highScoreMedium, data.highScoreDifficult, data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight, data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft);
-            }
-            if (LevelLoader.instance.difficulte == 2)
-            {
-                int maxScore = data.highScoreMedium;
-                int newMaxScore = maxScore;
-                if (currentScore > maxScore)
+                if (LevelLoader.instance.difficulte == 3)
                 {
-                    newMaxScore = currentScore;
+                    int maxScore = data.highScoreDifficult2;
+                    int newMaxScore = maxScore;
+                    if (currentScore > maxScore)
+                    {
+                        newMaxScore = currentScore;
+                    }
+                    SaveSystem.SaveData(data.numberGames, data.timePlayed, data.highScoreEasy, data.highScoreMedium, data.highScoreDifficult,
+                        data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight,
+                        data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft,
+                        gamesPlayed, newTimePlayed, data.highScoreEasy2, data.highScoreMedium2, newMaxScore,
+                        data.highScoreEasyRight2, data.highScoreMediumRight2, data.highScoreDifficultRight2,
+                        data.highScoreEasyLeft2, data.highScoreMediumLeft2, data.highScoreDifficultLeft2);
                 }
-                SaveSystem.SaveData(gamesPlayed, newTimePlayed, data.highScoreEasy, newMaxScore, data.highScoreDifficult, data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight, data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft);
             }
-            if (LevelLoader.instance.difficulte == 3)
-            {
-                int maxScore = data.highScoreDifficult;
-                int newMaxScore = maxScore;
-                if (currentScore > maxScore)
-                {
-                    newMaxScore = currentScore;
-                }
-                SaveSystem.SaveData(gamesPlayed, newTimePlayed, data.highScoreEasy, data.highScoreMedium, newMaxScore, data.highScoreEasyRight, data.highScoreMediumRight, data.highScoreDifficultRight, data.highScoreEasyLeft, data.highScoreMediumLeft, data.highScoreDifficultLeft);
-            }
-        }
+        }        
     }
 }

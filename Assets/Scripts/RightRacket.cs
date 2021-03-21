@@ -13,8 +13,6 @@ public class RightRacket : MonoBehaviour
 
     [SerializeField] private ScoreUpdate scoreUpdate;
 
-    [SerializeField] private Rigidbody hand;
-
     [SerializeField] private Text goodBall;
 
     private float time;
@@ -46,7 +44,7 @@ public class RightRacket : MonoBehaviour
     {
         if (other.CompareTag("Ball") && time > 1 && !leftRacket.ltouch && LevelLoader.instance.game2)
         {
-            if (hand.velocity.z > 0.5)
+            if (GetComponent<Rigidbody>().velocity.magnitude > 0.5)
             {
                 scoreUpdate.arret += 1;
                 score.arret += 1;

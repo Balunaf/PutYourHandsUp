@@ -67,7 +67,7 @@ public class RightRacket : MonoBehaviour
         rotx = rotxi - rightHand.transform.rotation.x;
         roty = rotyi - rightHand.transform.rotation.y;
         rotz = rotzi - rightHand.transform.rotation.z;
-        transform.eulerAngles = new Vector3((360 * rotx / Mathf.PI) % 360, (360 * roty / Mathf.PI) % 360, (360 * rotz / Mathf.PI) % 360);
+        transform.eulerAngles = new Vector3((360*rotx / Mathf.PI)%360, (360*roty / Mathf.PI)%360, (360*rotz / Mathf.PI)%360);
     }
     private void OnTriggerEnter(Collider other)
     {

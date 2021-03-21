@@ -6,11 +6,11 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI text_score;
+    [SerializeField] private TextMeshProUGUI text_score; //le text pour afficher le score
 
-    public int arret;
+    public int arret; //pour gérer le nombre de balles arrêtées
 
-    public int total;
+    public int total; //pour gérer le nombre de balles envoyées
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +18,7 @@ public class ScoreManager : MonoBehaviour
     }
 
     // Update is called once per frame
+    //on affiche le score du joueur ainsi qu'un petit texte en fonction de sa performance
     void Update()
     {
         if (arret < total/4)
@@ -43,7 +44,7 @@ public class ScoreManager : MonoBehaviour
             }
         }
     }
-
+    //pour calculer le nombre de balles envoyées
     private void UpdateTotal()
     {
         int dif = LevelLoader.instance.difficulte;

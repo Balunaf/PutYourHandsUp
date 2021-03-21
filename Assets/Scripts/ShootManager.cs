@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class ShootManager : MonoBehaviour
 {
-    [SerializeField] private BallManager originalBall = null;
+    [SerializeField] private BallManager originalBall = null; //pour connaître la balle à instancier
 
-    [SerializeField] private float rateOfFire = 1;
+    [SerializeField] private ScoreManager score; //pour gérer le score
 
-    [SerializeField] private ScoreManager score;
+    [SerializeField] private AudioManager audioManager; //pour gérer le son
 
-    [SerializeField] private AudioManager audioManager;
+    public LineRenderer lineRenderer; //pour gérer le pop-up de fin
 
-    public LineRenderer lineRenderer;
+    public Canvas canvas; //pour gérer le pop-up de fin
 
-    public Canvas canvas;
-
-    private float time = 0;
+    private float time = 0; //pour gérer le temps
 
     private float totalTime = 0;
 

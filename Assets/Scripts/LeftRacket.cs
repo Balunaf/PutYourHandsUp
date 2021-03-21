@@ -32,6 +32,8 @@ public class LeftRacket : MonoBehaviour
     private float roty;
 
     private float rotz;
+
+    private float rotw;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,7 +59,8 @@ public class LeftRacket : MonoBehaviour
         rotx = leftHand.transform.rotation.x;
         roty = leftHand.transform.rotation.y;
         rotz = leftHand.transform.rotation.z;
-        transform.rotation = new Quaternion(rotx, roty, rotz,0);
+        rotw = leftHand.transform.rotation.w;
+        transform.rotation = new Quaternion(rotx, roty, rotz,rotw);
     }
     private void OnTriggerEnter(Collider other)
     {

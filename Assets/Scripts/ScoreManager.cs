@@ -6,7 +6,7 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI text_score; //le text pour afficher le score
+    [SerializeField] private TextMeshProUGUI text_score; //le texte pour afficher le score
 
     public int arret; //pour gérer le nombre de balles arrêtées
 

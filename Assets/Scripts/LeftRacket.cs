@@ -17,6 +17,8 @@ public class LeftRacket : MonoBehaviour
 
     [SerializeField] private Text goodBall;
 
+    [SerializeField] private LeftHandManager leftHand;
+
     private float time;
 
     public bool ltouch = false;
@@ -40,13 +42,14 @@ public class LeftRacket : MonoBehaviour
         if (time > 1)
         {
             ltouch = false;
+            leftHand.ltouch = false;
         }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Ball") && time > 1 && !rightRacket.rtouch && LevelLoader.instance.game2)
         {
-            if (hand.velocity.z > 1)
+            if (GetComponent<Rigidbody>().velocity.magnitude > 1)
             {
                 scoreUpdate.arret += 1;
                 score.arret += 1;
@@ -59,7 +62,8 @@ public class LeftRacket : MonoBehaviour
             audioManager.HitBall();
             time = 0;
             ltouch = true;
-            OVRInput.SetControllerVibration(0.5f, 1, OVRInput.Controller.LTouch);
+            leftHand.ltouch = true;
+            leftHand.Vibration();
         }
     }
 }

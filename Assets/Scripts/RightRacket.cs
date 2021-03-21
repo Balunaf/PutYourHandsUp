@@ -15,6 +15,8 @@ public class RightRacket : MonoBehaviour
 
     [SerializeField] private Text goodBall;
 
+    [SerializeField] private RightHandManager rightHand;
+
     private float time;
 
     public bool rtouch = false;
@@ -38,6 +40,7 @@ public class RightRacket : MonoBehaviour
         if (time > 1)
         {
             rtouch = false;
+            rightHand.rtouch = false;
         }
     }
     private void OnTriggerEnter(Collider other)
@@ -57,7 +60,8 @@ public class RightRacket : MonoBehaviour
             audioManager.HitBall();
             time = 0;
             rtouch = true;
-            OVRInput.SetControllerVibration(0.5f, 1, OVRInput.Controller.LTouch);
+            rightHand.rtouch = true;
+            rightHand.Vibration();
         }
     }
 }

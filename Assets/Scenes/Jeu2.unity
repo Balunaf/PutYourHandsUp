@@ -1044,6 +1044,7 @@ MonoBehaviour:
   scoreUpdate: {fileID: 1762228301}
   hand: {fileID: 381842977}
   goodBall: {fileID: 2030063646}
+  leftHand: {fileID: 1681054176}
   ltouch: 0
 --- !u!54 &381842977
 Rigidbody:
@@ -2268,8 +2269,8 @@ MonoBehaviour:
   leftRacket: {fileID: 381842976}
   audioManager: {fileID: 1681054175}
   scoreUpdate: {fileID: 1762228301}
-  hand: {fileID: 948997257}
   goodBall: {fileID: 2030063646}
+  rightHand: {fileID: 1681054179}
   rtouch: 0
 --- !u!54 &948997257
 Rigidbody:
@@ -4137,6 +4138,12 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 1681054164}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1681054171 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 168962, guid: ce816f2e6abb0504092c23ed9b970dfd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1681054164}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1681054172 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100008, guid: ce816f2e6abb0504092c23ed9b970dfd,
@@ -4159,6 +4166,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   sortOrder: 0
+--- !u!1 &1681054174 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 134650, guid: ce816f2e6abb0504092c23ed9b970dfd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1681054164}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1681054175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4175,6 +4188,23 @@ MonoBehaviour:
   sourceSendBall: {fileID: 1147888169}
   hitBall: {fileID: 8300000, guid: 7e17225364030f8488eb05b7a306baf7, type: 3}
   sendBall: {fileID: 8300000, guid: 3788e6a83b6dd104d8850feb28ec2a83, type: 3}
+--- !u!114 &1681054176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681054171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4835930b631a5ce4e8d3fa33c4469a60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 0}
+  rightHand: {fileID: 0}
+  audioManager: {fileID: 0}
+  scoreUpdate: {fileID: 0}
+  ltouch: 0
 --- !u!114 &1681054177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4286,6 +4316,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1681054179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681054174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0252ef2805405274cad6f3d5e6c2898d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: {fileID: 0}
+  leftHand: {fileID: 0}
+  audioManager: {fileID: 0}
+  scoreUpdate: {fileID: 0}
+  rtouch: 0
 --- !u!1 &1728435889
 GameObject:
   m_ObjectHideFlags: 0
@@ -4928,8 +4975,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -67.6, y: 56.1}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -0.4, y: 56.1}
+  m_SizeDelta: {x: 300, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2030063646
 MonoBehaviour:

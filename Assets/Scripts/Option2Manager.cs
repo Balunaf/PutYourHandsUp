@@ -23,9 +23,6 @@ public class Option2Manager : MonoBehaviour
         {
             stats.text = "Parties terminées : " + data.numberGames2.ToString() + "\n"
             + "Temps de jeu : " + (data.timePlayed2 / 60).ToString() + "h0" + (data.timePlayed2 - 60 * (data.timePlayed2 / 60)).ToString() + "\n"
-            + "Meilleur score facile : " + data.highScoreEasy2.ToString() + "\n"
-            + "Meilleur score moyen : " + data.highScoreMedium2.ToString() + "\n"
-            + "Meilleur score difficle : " + data.highScoreDifficult2.ToString() + "\n"
             + "Meilleur score main droite facile : " + data.highScoreEasyRight2.ToString() + "\n"
             + "Meilleur score main droite moyen : " + data.highScoreMediumRight2.ToString() + "\n"
             + "Meilleur score main droite difficile : " + data.highScoreDifficultRight2.ToString() + "\n"
@@ -37,9 +34,6 @@ public class Option2Manager : MonoBehaviour
         {
             stats.text = "Parties terminées : " + data.numberGames2.ToString() + "\n"
             + "Temps de jeu : " + (data.timePlayed2 / 60).ToString() + "h" + (data.timePlayed2 - 60 * (data.timePlayed2 / 60)).ToString() + "\n"
-            + "Meilleur score facile : " + data.highScoreEasy2.ToString() + "\n"
-            + "Meilleur score moyen : " + data.highScoreMedium2.ToString() + "\n"
-            + "Meilleur score difficle : " + data.highScoreDifficult2.ToString() + "\n"
             + "Meilleur score main droite facile : " + data.highScoreEasyRight2.ToString() + "\n"
             + "Meilleur score main droite moyen : " + data.highScoreMediumRight2.ToString() + "\n"
             + "Meilleur score main droite difficile : " + data.highScoreDifficultRight2.ToString() + "\n"

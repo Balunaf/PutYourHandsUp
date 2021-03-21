@@ -1233,7 +1233,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   originalBall: {fileID: 7222568970034191495, guid: ab68bb2a75df72d45857882bc4ff6c94,
     type: 3}
-  rateOfFire: 1
   score: {fileID: 995023425}
   audioManager: {fileID: 1681054175}
   lineRenderer: {fileID: 1789856474}
@@ -4949,6 +4948,10 @@ PrefabInstance:
     - target: {fileID: 4389602783215420, guid: c4b192962deef094980528d2e80de419, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4389602783215420, guid: c4b192962deef094980528d2e80de419, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4b192962deef094980528d2e80de419, type: 3}

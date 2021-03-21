@@ -662,7 +662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c4e77dd1a265174388c6e75dd3497f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 1015474701}
+  menu: {fileID: 1376537981}
   stats: {fileID: 57598140}
 --- !u!114 &264359129
 MonoBehaviour:
@@ -1430,7 +1430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b5221b835bcf0d4c95afbbccdfa7cdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 1015474701}
+  menu: {fileID: 1376537981}
   stats: {fileID: 1295305826}
 --- !u!114 &538925996
 MonoBehaviour:

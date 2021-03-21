@@ -5,29 +5,30 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
-    public int numberGames;
-    public int timePlayed;
-    public int highScoreEasy;
-    public int highScoreMedium;
-    public int highScoreDifficult;
-    public int highScoreEasyRight;
-    public int highScoreMediumRight;
-    public int highScoreDifficultRight;
-    public int highScoreEasyLeft;
-    public int highScoreMediumLeft;
-    public int highScoreDifficultLeft;
-    public int numberGames2;
-    public int timePlayed2;
-    public int highScoreEasy2;
-    public int highScoreMedium2;
-    public int highScoreDifficult2;
-    public int highScoreEasyRight2;
-    public int highScoreMediumRight2;
-    public int highScoreDifficultRight2;
-    public int highScoreEasyLeft2;
-    public int highScoreMediumLeft2;
-    public int highScoreDifficultLeft2;
+    public int numberGames; //le nombres de parties jouées dans le jeu 1
+    public int timePlayed; //le temps passé à jouer dans le jeu 1
+    public int highScoreEasy; //le meilleur score dans le jeu 1 facile
+    public int highScoreMedium; //le meilleur score dans le jeu 1 moyen
+    public int highScoreDifficult; //le meilleur score dans le jeu 1 difficile
+    public int highScoreEasyRight; //le meilleur score dans le jeu 1 main droite facile
+    public int highScoreMediumRight; //le meilleur score dans le jeu 1 main droite moyen
+    public int highScoreDifficultRight; //le meilleur score dans le jeu 1 main droite difficile
+    public int highScoreEasyLeft; //le meilleur score dans le jeu 1 main gauche facile
+    public int highScoreMediumLeft; //le meilleur score dans le jeu 1 main gauche moyen
+    public int highScoreDifficultLeft; //le meilleur score dans le jeu 1 main gauche difficile
+    public int numberGames2; //le nombres de parties jouées dans le jeu 2
+    public int timePlayed2; //le temps passé à jouer dans le jeu 2
+    public int highScoreEasy2; //le meilleur score dans le jeu 2 facile
+    public int highScoreMedium2; //le meilleur score dans le jeu 2 moyen
+    public int highScoreDifficult2; //le meilleur score dans le jeu 2 difficile
+    public int highScoreEasyRight2; //le meilleur score dans le jeu 2 main droite facile
+    public int highScoreMediumRight2; //le meilleur score dans le jeu 2 main droite moyen
+    public int highScoreDifficultRight2; //le meilleur score dans le jeu 2 main droite difficile
+    public int highScoreEasyLeft2; //le meilleur score dans le jeu 2 main gauche facile
+    public int highScoreMediumLeft2; //le meilleur score dans le jeu 2 main gauche moyen
+    public int highScoreDifficultLeft2; //le meilleur score dans le jeu 2 main gauche difficile
 
+    //constructeur d'un GameData
     public GameData(int _number, int _time, int _highe, int _highm, int _highd, int _higher,
         int _highmr, int _highdr, int _highel, int _highml, int _highdl,
         int _number2, int _time2, int _highe2, int _highm2, int _highd2, int _higher2,

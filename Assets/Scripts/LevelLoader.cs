@@ -5,23 +5,24 @@ using TMPro;
 
 public class LevelLoader : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI textMain;
+    [SerializeField] private TextMeshProUGUI textMain; //l'affichage des mains sélectionnées
 
-    [SerializeField] private TextMeshProUGUI textDifficulte;
+    [SerializeField] private TextMeshProUGUI textDifficulte; //l'affichage de la difficulté sélectionnée
 
-    [SerializeField] private Canvas option;
+    [SerializeField] private Canvas option; //le menu d'option pour les statistiques
 
-    public bool game1;
+    public bool game1; //pour savoir si on est dans le jeu 1
 
-    public bool game2;
+    public bool game2; //pour savoir si on est dans le jeu 2
 
-    public bool leftHand;
+    public bool leftHand; //pour savoir si on a que la main gauche
 
-    public bool rightHand;
+    public bool rightHand; //pour savoir si on a que la main droite
 
-    public int difficulte;
+    public int difficulte; //pour savoir quelle est la difficulté choisie
 
-    public static LevelLoader instance;
+    public static LevelLoader instance; //pour créer une instance
+    //on crée une instance pour pouvoir accéder à tous les attrbuts public n'importe où dans le jeu
     private void Awake()
     {
         if (instance)

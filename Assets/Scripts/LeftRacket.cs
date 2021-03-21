@@ -17,8 +17,6 @@ public class LeftRacket : MonoBehaviour
 
     [SerializeField] private LeftHandManager leftHand;
 
-    [SerializeField] private GameObject refe;
-
     private float time;
 
     public bool ltouch = false;
@@ -40,12 +38,6 @@ public class LeftRacket : MonoBehaviour
     private float rotyi;
 
     private float rotzi;
-
-    private float rotx1;
-
-    private float roty1;
-
-    private float rotz1;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,9 +48,6 @@ public class LeftRacket : MonoBehaviour
         rotxi = leftHand.transform.rotation.x;
         rotyi = leftHand.transform.rotation.y;
         rotzi = leftHand.transform.rotation.z;
-        rotx1 = refe.transform.rotation.x;
-        roty1 = refe.transform.rotation.y;
-        rotz1 = refe.transform.rotation.z;
     }
 
     // Update is called once per frame
@@ -74,9 +63,9 @@ public class LeftRacket : MonoBehaviour
         y = leftHand.transform.position.y;
         z = leftHand.transform.position.z;
         transform.position = new Vector3(x, y, z);
-        rotx = leftHand.transform.rotation.x - rotxi + rotx1;
-        roty = leftHand.transform.rotation.y - rotyi + roty1;
-        rotz = leftHand.transform.rotation.z - rotzi + rotz1;
+        rotx = leftHand.transform.rotation.x - rotxi;
+        roty = leftHand.transform.rotation.y - rotyi;
+        rotz = leftHand.transform.rotation.z - rotzi;
         transform.eulerAngles = new Vector3((360*rotx / Mathf.PI)%360, (360*roty / Mathf.PI)%360, (360*rotz / Mathf.PI)%360);
     }
     private void OnTriggerEnter(Collider other)

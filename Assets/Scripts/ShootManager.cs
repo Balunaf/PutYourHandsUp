@@ -16,6 +16,10 @@ public class ShootManager : MonoBehaviour
 
     private float time = 0; //pour gérer le temps
 
+    private float time1 = 0; //pour gérer le premier tir
+
+    private bool first; //pour gérer le premier tir
+
     private float totalTime = 0; //pour gérer le temps passé en jeu
 
     private float x; //pour gérer la position en x du lanceur
@@ -24,6 +28,8 @@ public class ShootManager : MonoBehaviour
 
     private float z = 21; //pour gérer la position en x du lanceur
 
+    private float shoot; //pour gérer la cadence de tir
+
     // Start is called before the first frame update
     //on positionne le lanceur à une position aléatoire
     void Start()
@@ -31,12 +37,23 @@ public class ShootManager : MonoBehaviour
         x = Random.Range(-1f, 1f);
         y = Random.Range(-0.5f, 0.5f);
         transform.position = new Vector3(x, y, z);
+        if (LevelLoader.instance.difficulte == 1)
+        {
+            shoot = 8;
+        }
+        if (LevelLoader.instance.difficulte == 2)
+        {
+            shoot = 6;
+        }
+        if (LevelLoader.instance.difficulte == 3)
+        {
+            shoot = 5;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        time += Time.deltaTime;
         totalTime += Time.deltaTime;
         if (totalTime > 20) //la partie est finie, on affiche le pop-up de fin
         {
@@ -45,21 +62,25 @@ public class ShootManager : MonoBehaviour
         }
         if (totalTime < 18) //la partie n'est pas encore finie, on tire une balle, l'intervalle de tire dépend de la difficulté
         {
-            if (time > 8 && LevelLoader.instance.difficulte == 1)
+            if (time1 < 1)
             {
-                NewBall();
-                time = 0;
+                time1 += Time.deltaTime;
             }
-            if (time > 6 && LevelLoader.instance.difficulte == 2)
+            else
             {
-                NewBall();
-                time = 0;
+                if (!first)
+                {
+                    NewBall();
+                    first = true;
+                }
+                time += Time.deltaTime;
+                if (time > shoot)
+                {
+                    NewBall();
+                    time = 0;
+                }
             }
-            if (time > 5 && LevelLoader.instance.difficulte == 3)
-            {
-                NewBall();
-                time = 0;
-            }
+
         } 
     }
     //fonction à appeler pour instancier une balle

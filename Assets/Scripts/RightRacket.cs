@@ -33,10 +33,6 @@ public class RightRacket : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time > 0.05)
-        {
-            OVRInput.SetControllerVibration(0, 0, OVRInput.Controller.LTouch);
-        }
         if (time > 1)
         {
             rtouch = false;

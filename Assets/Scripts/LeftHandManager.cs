@@ -51,7 +51,7 @@ public class LeftHandManager : MonoBehaviour
     }
     public void Vibration()
     {
-        OVRInput.SetControllerVibration(0.5f, 1, OVRInput.Controller.RTouch);
+        OVRInput.SetControllerVibration(0.5f, 1, OVRInput.Controller.LTouch);
         time = 0;
     }
 }

@@ -35,7 +35,13 @@ public class LeftRacket : MonoBehaviour
 
     private float rotw;
 
-    private float rotxi;;
+    private float rotxi;
+
+    private float rotyi;
+
+    private float rotzi;
+
+    private float rotwi;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +49,10 @@ public class LeftRacket : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+        rotxi = leftHand.transform.rotation.x;
+        rotyi = leftHand.transform.rotation.y;
+        rotzi = leftHand.transform.rotation.z;
+        rotwi = leftHand.transform.rotation.w;
     }
 
     // Update is called once per frame
@@ -58,10 +68,10 @@ public class LeftRacket : MonoBehaviour
         y = leftHand.transform.position.y;
         z = leftHand.transform.position.z;
         transform.position = new Vector3(x, y, z);
-        rotx = leftHand.transform.rotation.x;
-        roty = leftHand.transform.rotation.y;
-        rotz = leftHand.transform.rotation.z;
-        rotw = leftHand.transform.rotation.w;
+        rotx = leftHand.transform.rotation.x - rotxi;
+        roty = leftHand.transform.rotation.y - rotyi;
+        rotz = leftHand.transform.rotation.z - rotzi;
+        rotw = leftHand.transform.rotation.w - rotwi;
         transform.rotation = new Quaternion(rotx, roty, rotz, rotw);
     }
     private void OnTriggerEnter(Collider other)

@@ -60,7 +60,7 @@ public class LeftRacket : MonoBehaviour
         roty = leftHand.transform.rotation.y;
         rotz = leftHand.transform.rotation.z;
         rotw = leftHand.transform.rotation.w;
-        transform.rotation = new Quaternion(rotx, roty + 90, rotz, rotw);
+        transform.rotation = new Quaternion(rotx, roty, rotz, rotw);
     }
     private void OnTriggerEnter(Collider other)
     {

@@ -35,6 +35,7 @@ public class MenuLoader : MonoBehaviour
     {
         int currentScore = score.arret;
         GameData data = SaveSystem.LoadData();
+        //sauvegarde des donnés pour le jeu 2 et selon la main et la difficulté sélectionnées
         if (LevelLoader.instance.game1)
         {
             int gamesPlayed = data.numberGames + 1;
@@ -184,6 +185,7 @@ public class MenuLoader : MonoBehaviour
                 }
             }
         }
+        //sauvegarde des donnés pour le jeu 2 et selon la main et la difficulté sélectionnées
         if (LevelLoader.instance.game2)
         {
             int gamesPlayed = data.numberGames2 + 1;

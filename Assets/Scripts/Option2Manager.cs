@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class Option2Manager : MonoBehaviour
 {
-    [SerializeField] private Canvas menu;
+    [SerializeField] private Canvas menu; //le menu des options
 
-    [SerializeField] private TextMeshProUGUI stats;
+    [SerializeField] private TextMeshProUGUI stats; //le text des statistiques du jeu 2
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +18,7 @@ public class Option2Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //on affiche les statistiques du jeu, avec x h 0y si y<10 minutes et x h y sinon
         GameData data = SaveSystem.LoadData();
         if (data.timePlayed2 - 60 * (data.timePlayed2 / 60) < 10)
         {
@@ -42,7 +43,7 @@ public class Option2Manager : MonoBehaviour
             + "Meilleur score main gauche difficile : " + data.highScoreDifficultLeft2.ToString();
         }
     }
-
+    //la fonction à appeler pour revenir au menu des options
     public void BackToMenu()
     {
         menu.gameObject.SetActive(true);

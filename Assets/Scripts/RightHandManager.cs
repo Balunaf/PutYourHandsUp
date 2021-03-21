@@ -53,5 +53,6 @@ public class RightHandManager : MonoBehaviour
     public void Vibration()
     {
         OVRInput.SetControllerVibration(0.5f, 1, OVRInput.Controller.RTouch);
+        time = 0;
     }
 }

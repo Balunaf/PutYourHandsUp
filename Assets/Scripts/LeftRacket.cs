@@ -49,7 +49,9 @@ public class LeftRacket : MonoBehaviour
     {
         if (other.CompareTag("Ball") && time > 1 && !rightRacket.rtouch && LevelLoader.instance.game2)
         {
-            if (GetComponent<Rigidbody>().velocity.z > 0.5)
+            if ((GetComponent<Rigidbody>().velocity.z > 50 && LevelLoader.instance.difficulte == 1) ||
+                (GetComponent<Rigidbody>().velocity.z > 60 && LevelLoader.instance.difficulte == 2) ||
+                (GetComponent<Rigidbody>().velocity.z > 70 && LevelLoader.instance.difficulte == 3))
             {
                 scoreUpdate.arret += 1;
                 score.arret += 1;

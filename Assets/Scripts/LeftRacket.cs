@@ -17,6 +17,8 @@ public class LeftRacket : MonoBehaviour
 
     [SerializeField] private LeftHandManager leftHand;
 
+    [SerializeField] private GameObject refe;
+
     private float time;
 
     public bool ltouch = false;
@@ -54,9 +56,9 @@ public class LeftRacket : MonoBehaviour
         rotxi = leftHand.transform.rotation.x;
         rotyi = leftHand.transform.rotation.y;
         rotzi = leftHand.transform.rotation.z;
-        rotx1 = transform.rotation.x;
-        roty1 = transform.rotation.y;
-        rotz1 = transform.rotation.z;
+        rotx1 = refe.transform.rotation.x;
+        roty1 = refe.transform.rotation.y;
+        rotz1 = refe.transform.rotation.z;
     }
 
     // Update is called once per frame

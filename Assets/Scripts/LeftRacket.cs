@@ -20,6 +20,12 @@ public class LeftRacket : MonoBehaviour
     private float time;
 
     public bool ltouch = false;
+
+    private float x;
+
+    private float y;
+
+    private float z;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +44,10 @@ public class LeftRacket : MonoBehaviour
             ltouch = false;
             leftHand.ltouch = false;
         }
+        x = leftHand.transform.position.x;
+        y = leftHand.transform.position.y;
+        z = leftHand.transform.position.z;
+        transform.position = new Vector3(x, y, z);
     }
     private void OnTriggerEnter(Collider other)
     {

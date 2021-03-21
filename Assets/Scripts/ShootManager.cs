@@ -62,7 +62,7 @@ public class ShootManager : MonoBehaviour
         }
         if (totalTime < 18) //la partie n'est pas encore finie, on tire une balle, l'intervalle de tire dépend de la difficulté
         {
-            if (time1 < 1)
+            if (time1 < 3)
             {
                 time1 += Time.deltaTime;
             }

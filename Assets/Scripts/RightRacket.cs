@@ -20,6 +20,20 @@ public class RightRacket : MonoBehaviour
     private float time;
 
     public bool rtouch = false;
+
+    private float x;
+
+    private float y;
+
+    private float z;
+
+    private float rotx;
+
+    private float roty;
+
+    private float rotz;
+
+    private float rotw;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +52,15 @@ public class RightRacket : MonoBehaviour
             rtouch = false;
             rightHand.rtouch = false;
         }
+        x = rightHand.transform.position.x;
+        y = rightHand.transform.position.y;
+        z = rightHand.transform.position.z;
+        transform.position = new Vector3(x, y, z);
+        rotx = rightHand.transform.rotation.x;
+        roty = rightHand.transform.rotation.y;
+        rotz = rightHand.transform.rotation.z;
+        rotw = rightHand.transform.rotation.w;
+        transform.rotation = new Quaternion(rotx, roty, rotz, rotw);
     }
     private void OnTriggerEnter(Collider other)
     {

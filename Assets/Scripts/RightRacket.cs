@@ -64,9 +64,9 @@ public class RightRacket : MonoBehaviour
         z = rightHand.transform.position.z;
         transform.position = new Vector3(x, y, z);
         //on lie la rotation de la raquette à celle de la main
-        rotx = rightHand.transform.rotation.x - rotxi;
-        roty = rightHand.transform.rotation.y - rotyi;
-        rotz = rightHand.transform.rotation.z - rotzi;
+        rotx = rotxi - rightHand.transform.rotation.x;
+        roty = rotyi - rightHand.transform.rotation.y;
+        rotz = rotzi - rightHand.transform.rotation.z;
         transform.eulerAngles = new Vector3((360 * rotx / Mathf.PI) % 360, (360 * roty / Mathf.PI) % 360, (360 * rotz / Mathf.PI) % 360);
     }
     private void OnTriggerEnter(Collider other)

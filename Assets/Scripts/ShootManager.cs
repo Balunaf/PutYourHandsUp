@@ -55,12 +55,12 @@ public class ShootManager : MonoBehaviour
     void Update()
     {
         totalTime += Time.deltaTime;
-        if (totalTime > 180) //la partie est finie, on affiche le pop-up de fin
+        if (totalTime > 20) //la partie est finie, on affiche le pop-up de fin
         {
             canvas.gameObject.SetActive(true);
             lineRenderer.gameObject.SetActive(true);
         }
-        if (totalTime < 178) //la partie n'est pas encore finie, on tire une balle, l'intervalle de tire dépend de la difficulté
+        if (totalTime < 18) //la partie n'est pas encore finie, on tire une balle, l'intervalle de tire dépend de la difficulté
         {
             if (time1 < 3)
             {

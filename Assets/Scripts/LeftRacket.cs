@@ -72,7 +72,7 @@ public class LeftRacket : MonoBehaviour
         roty = leftHand.transform.rotation.y - rotyi;
         rotz = leftHand.transform.rotation.z - rotzi;
         rotw = leftHand.transform.rotation.w - rotwi;
-        transform.rotation = new Quaternion(rotx, roty, rotz, rotw);
+        transform.eulerAngles = new Vector3(rotx, roty, rotz);
     }
     private void OnTriggerEnter(Collider other)
     {

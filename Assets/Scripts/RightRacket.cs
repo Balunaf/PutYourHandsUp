@@ -46,7 +46,7 @@ public class RightRacket : MonoBehaviour
     {
         if (other.CompareTag("Ball") && time > 1 && !leftRacket.ltouch && LevelLoader.instance.game2)
         {
-            if (hand.velocity.z > 1)
+            if (hand.velocity.z > 0.5)
             {
                 scoreUpdate.arret += 1;
                 score.arret += 1;

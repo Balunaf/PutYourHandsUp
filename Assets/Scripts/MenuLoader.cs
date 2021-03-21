@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class MenuLoader : MonoBehaviour
 {
-    [SerializeField] private Canvas canvas;
+    [SerializeField] private Canvas canvas; //le pop-up de fin de partie
 
-    [SerializeField] ScoreManager score;
+    [SerializeField] ScoreManager score; //le score
     // Start is called before the first frame update
     void Start()
     {
@@ -20,16 +20,17 @@ public class MenuLoader : MonoBehaviour
     {
         
     }
+    //la fonction à appeler pour retourner au menu
     public void LoadLevel(int sceneIndex)
     {
         SceneManager.LoadScene(sceneIndex);
     }
-
+    //on desactive le pop-up pendant la partie
     private void OnEnable()
     {
         canvas.gameObject.SetActive(false);
     }
-
+    //la fonction à appeler pour sauvegarder les données
     public void SaveData()
     {
         int currentScore = score.arret;

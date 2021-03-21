@@ -1652,7 +1652,22 @@ PrefabInstance:
     - target: {fileID: 54597406144772412, guid: c4b192962deef094980528d2e80de419,
         type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54597406144772412, guid: c4b192962deef094980528d2e80de419,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 54597406144772412, guid: c4b192962deef094980528d2e80de419,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54597406144772412, guid: c4b192962deef094980528d2e80de419,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4b192962deef094980528d2e80de419, type: 3}
@@ -3680,7 +3695,22 @@ PrefabInstance:
     - target: {fileID: 54597406144772412, guid: c4b192962deef094980528d2e80de419,
         type: 3}
       propertyPath: m_Constraints
-      value: 112
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54597406144772412, guid: c4b192962deef094980528d2e80de419,
+        type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 54597406144772412, guid: c4b192962deef094980528d2e80de419,
+        type: 3}
+      propertyPath: m_Drag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54597406144772412, guid: c4b192962deef094980528d2e80de419,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4b192962deef094980528d2e80de419, type: 3}

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class MenuAudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource sourceClickButton;
+    [SerializeField] private AudioSource sourceClickButton; //la source pour le son quand on clique sur un bouton
 
-    [SerializeField] private AudioClip clickButton;
+    [SerializeField] private AudioClip clickButton; //le sond pour quand on clique sur un bouton
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +18,7 @@ public class MenuAudioManager : MonoBehaviour
     {
 
     }
-
+    //la fonction à appeler pour quand on clique sur un bouton
     public void ClickButton()
     {
         sourceClickButton.loop = false;

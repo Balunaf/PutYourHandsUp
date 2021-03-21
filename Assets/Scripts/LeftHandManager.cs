@@ -14,11 +14,11 @@ public class LeftHandManager : MonoBehaviour
 
     private float time; //pour gérer le temps
 
-    public bool ltouch = false; //pour savoir si la balle a touché quelque chose
+    public bool ltouch = false; //pour savoir si la main a touché quelque chose
     // Start is called before the first frame update
     void Start()
     {
-        if (LevelLoader.instance.rightHand) //on active pas la main gauche si le joueur a choisi main droite
+        if (LevelLoader.instance.rightHand) //on n'active pas la main gauche si le joueur a choisi main droite
         {
             gameObject.SetActive(false);
         }
@@ -39,7 +39,7 @@ public class LeftHandManager : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        //collision avec la main que dans le jeu 1
+        //collision avec la balle que dans le jeu 1
         if (other.CompareTag("Ball") && time > 1 && !rightHand.rtouch && LevelLoader.instance.game1)
         {
             audioManager.HitBall();

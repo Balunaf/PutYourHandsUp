@@ -5,48 +5,45 @@ using UnityEngine.UI;
 
 public class RightRacket : MonoBehaviour
 {
-    [SerializeField] private ScoreManager score;
+    [SerializeField] private ScoreManager score; //le score
 
-    [SerializeField] private LeftRacket leftRacket;
+    [SerializeField] private AudioManager audioManager; //l'audio
 
-    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private ScoreUpdate scoreUpdate; //le score en jeu
 
-    [SerializeField] private ScoreUpdate scoreUpdate;
+    [SerializeField] private Text goodBall; //le texte pour savoir si on a renvoyé la balle assez fort
 
-    [SerializeField] private Text goodBall;
+    [SerializeField] private RightHandManager rightHand; //la main gauche
 
-    [SerializeField] private RightHandManager rightHand;
+    private float time; //pour gérer le temps
 
-    private float time;
+    public bool rtouch = false; //pour savoir si la raquette à touché quelque chose
 
-    public bool rtouch = false;
+    private float x; //la position de la raquette en x
 
-    private float x;
+    private float y; //la position de la raquette en y
 
-    private float y;
+    private float z; //la position de la raquette en z
 
-    private float z;
+    private float rotx; //la rotation de la raquette en x
 
-    private float rotx;
+    private float roty; //la rotation de la raquette en y
 
-    private float roty;
+    private float rotz; //la rotation de la raquette en z
 
-    private float rotz;
+    private float rotxi; //la rotation initiale de la main en x
 
-    private float rotw;
+    private float rotyi; //la rotation initiale de la main en y
 
-    private float rotxi;
-
-    private float rotyi;
-
-    private float rotzi;
+    private float rotzi; //la rotation initiale de la main en z
     // Start is called before the first frame update
     void Start()
     {
-        if (LevelLoader.instance.leftHand)
+        if (LevelLoader.instance.leftHand) //on n'active pas la raquette droite si le jouer a choisi main gauche
         {
             gameObject.SetActive(false);
         }
+        //on récupère la rotation initiale de la main
         rotxi = rightHand.transform.rotation.x;
         rotyi = rightHand.transform.rotation.y;
         rotzi = rightHand.transform.rotation.z;
@@ -56,15 +53,17 @@ public class RightRacket : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time > 1)
+        if (time > 1) //on permet au joueur de retoucher une balle
         {
             rtouch = false;
             rightHand.rtouch = false;
         }
+        //on lie la position de la raquette à celle de la main
         x = rightHand.transform.position.x;
         y = rightHand.transform.position.y;
         z = rightHand.transform.position.z;
         transform.position = new Vector3(x, y, z);
+        //on lie la rotation de la raquette à celle de la main
         rotx = rightHand.transform.rotation.x - rotxi;
         roty = rightHand.transform.rotation.y - rotyi;
         rotz = rightHand.transform.rotation.z - rotzi;
@@ -72,8 +71,10 @@ public class RightRacket : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Ball") && time > 1 && !leftRacket.ltouch && LevelLoader.instance.game2)
+        //collision avec la balle que dans le jeu 2
+        if (other.CompareTag("Ball") && time > 1 && LevelLoader.instance.game2)
         {
+            //on vérifie que la vitesse de la raquette est suffisante
             if ((GetComponent<Rigidbody>().velocity.magnitude > 50 && LevelLoader.instance.difficulte == 1) ||
                 (GetComponent<Rigidbody>().velocity.magnitude > 60 && LevelLoader.instance.difficulte == 2) ||
                 (GetComponent<Rigidbody>().velocity.magnitude > 70 && LevelLoader.instance.difficulte == 3))
@@ -90,7 +91,7 @@ public class RightRacket : MonoBehaviour
             time = 0;
             rtouch = true;
             rightHand.rtouch = true;
-            rightHand.Vibration();
+            rightHand.Vibration(); //on active la vibration de la manette
         }
     }
 }

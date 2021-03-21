@@ -5,46 +5,45 @@ using UnityEngine.UI;
 
 public class LeftRacket : MonoBehaviour
 {
-    [SerializeField] private ScoreManager score;
+    [SerializeField] private ScoreManager score; //le score
 
-    [SerializeField] private RightRacket rightRacket;
+    [SerializeField] private AudioManager audioManager; //l'audio
 
-    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private ScoreUpdate scoreUpdate; //le score en jeu
 
-    [SerializeField] private ScoreUpdate scoreUpdate;
+    [SerializeField] private Text goodBall; //le texte pour savoir si on a renvoyé la balle assez fort
 
-    [SerializeField] private Text goodBall;
+    [SerializeField] private LeftHandManager leftHand; //la main gauche
 
-    [SerializeField] private LeftHandManager leftHand;
+    private float time; //pour gérer le temps
 
-    private float time;
+    public bool ltouch = false; //pour savoir si la raquette à touché quelque chose
 
-    public bool ltouch = false;
+    private float x; //la position de la raquette en x
 
-    private float x;
+    private float y; //la position de la raquette en y
 
-    private float y;
+    private float z; //la position de la raquette en z
 
-    private float z;
+    private float rotx; //la rotation de la raquette en x
 
-    private float rotx;
+    private float roty; //la rotation de la raquette en y
 
-    private float roty;
+    private float rotz; //la rotation de la raquette en z
 
-    private float rotz;
+    private float rotxi; //la rotation initiale de la main en x
 
-    private float rotxi;
+    private float rotyi; //la rotation initiale de la main en x
 
-    private float rotyi;
-
-    private float rotzi;
+    private float rotzi; //la rotation initiale de la main en x
     // Start is called before the first frame update
     void Start()
     {
-        if (LevelLoader.instance.rightHand)
+        if (LevelLoader.instance.rightHand) //on n'active pas la raquette gauche si le jouer a choisi main droite
         {
             gameObject.SetActive(false);
         }
+        //on récupère la rotation initiale de la main
         rotxi = leftHand.transform.rotation.x;
         rotyi = leftHand.transform.rotation.y;
         rotzi = leftHand.transform.rotation.z;
@@ -54,15 +53,17 @@ public class LeftRacket : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        if (time > 1)
+        if (time > 1) //on permet au joueur de retoucher une balle
         {
             ltouch = false;
             leftHand.ltouch = false;
         }
+        //on lie la position de la raquette à celle de la main
         x = leftHand.transform.position.x;
         y = leftHand.transform.position.y;
         z = leftHand.transform.position.z;
         transform.position = new Vector3(x, y, z);
+        //on lie la rotation de la raquette à celle de la main
         rotx = leftHand.transform.rotation.x - rotxi;
         roty = leftHand.transform.rotation.y - rotyi;
         rotz = leftHand.transform.rotation.z - rotzi;
@@ -70,8 +71,10 @@ public class LeftRacket : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Ball") && time > 1 && !rightRacket.rtouch && LevelLoader.instance.game2)
+        //collision avec la balle que dans le jeu 2
+        if (other.CompareTag("Ball") && time > 1 && LevelLoader.instance.game2)
         {
+            //on vérifie que la vitesse de la raquette est suffisante
             if ((GetComponent<Rigidbody>().velocity.magnitude > 50 && LevelLoader.instance.difficulte == 1) ||
                 (GetComponent<Rigidbody>().velocity.magnitude > 60 && LevelLoader.instance.difficulte == 2) ||
                 (GetComponent<Rigidbody>().velocity.magnitude > 70 && LevelLoader.instance.difficulte == 3))
@@ -88,7 +91,7 @@ public class LeftRacket : MonoBehaviour
             time = 0;
             ltouch = true;
             leftHand.ltouch = true;
-            leftHand.Vibration();
+            leftHand.Vibration(); //on active la vibration de la manette
         }
     }
 }

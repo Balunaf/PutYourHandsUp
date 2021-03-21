@@ -50,11 +50,11 @@ public class ScoreManager : MonoBehaviour
         int dif = LevelLoader.instance.difficulte;
         if (dif == 1)
         {
-            total = 21;
+            total = 22;
         }
         if (dif == 2)
         {
-            total = 29;
+            total = 30;
         }
         if (dif == 3)
         {

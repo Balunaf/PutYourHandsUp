@@ -97,7 +97,12 @@ public class BallManager : MonoBehaviour
                 PassedBall();
             }
         }
-        if (time > 1)
+        if (time > 1 && LevelLoader.instance.game1)
+        {
+            time = 0;
+            Destroy(gameObject);
+        }
+        if (time > 2 && LevelLoader.instance.game2)
         {
             time = 0;
             Destroy(gameObject);
@@ -120,7 +125,7 @@ public class BallManager : MonoBehaviour
         {
             stopped = true;
             yn = transform.position.y;
-            zf = Random.Range(2f, 3f);
+            zf = Random.Range(9f, 11f);
             yf = Random.Range(1f, 2f);
             xf = Random.Range(-1f, 1f);
             force = new Vector3(xf, yf, zf);

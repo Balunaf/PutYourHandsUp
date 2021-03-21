@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource sourceHitBall;
+    [SerializeField] private AudioSource sourceHitBall; //source audio pour la touche de balle
 
-    [SerializeField] private AudioSource sourceSendBall;
+    [SerializeField] private AudioSource sourceSendBall; //source audio pour l'envoi de balle
 
-    [SerializeField] private AudioClip hitBall;
+    [SerializeField] private AudioClip hitBall; //sond pour la touche de balle
 
-    [SerializeField] private AudioClip sendBall;
+    [SerializeField] private AudioClip sendBall; //soon pour l'envoi de balle
     // Start is called before the first frame update
     void Start()
     {
@@ -23,11 +23,14 @@ public class AudioManager : MonoBehaviour
         
     }
 
+    //fonction à appeler pour lire le son de touche de balle
     public void HitBall()
     {
         sourceHitBall.loop = false;
         sourceHitBall.PlayOneShot(hitBall);
     }
+
+    //fonction à appeler pour lire le son d'envoi de balle
     public void SendBall()
     {
         sourceSendBall.loop = false;

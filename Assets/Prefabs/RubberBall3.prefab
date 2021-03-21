@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7222568970034191495}
   m_Layer: 0
   m_Name: RubberBall3
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +91,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1253019824463428}
   m_Material: {fileID: 13400000, guid: 6f26b256de844a247bf3cd975ae977ff, type: 2}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.018000001

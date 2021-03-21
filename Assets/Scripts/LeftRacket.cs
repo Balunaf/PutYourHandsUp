@@ -56,8 +56,8 @@ public class LeftRacket : MonoBehaviour
         y = leftHand.transform.position.y;
         z = leftHand.transform.position.z;
         transform.position = new Vector3(x, y, z);
-        rotx = leftHand.transform.rotation.x;
-        roty = leftHand.transform.rotation.y;
+        rotx = leftHand.transform.rotation.x + 25;
+        roty = leftHand.transform.rotation.y + 90;
         rotz = leftHand.transform.rotation.z;
         rotw = leftHand.transform.rotation.w;
         transform.rotation = new Quaternion(rotx, roty, rotz,rotw);

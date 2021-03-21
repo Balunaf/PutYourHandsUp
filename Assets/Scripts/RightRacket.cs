@@ -47,9 +47,9 @@ public class RightRacket : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-        rotxi = leftHand.transform.rotation.x;
-        rotyi = leftHand.transform.rotation.y;
-        rotzi = leftHand.transform.rotation.z;
+        rotxi = rightHand.transform.rotation.x;
+        rotyi = rightHand.transform.rotation.y;
+        rotzi = rightHand.transform.rotation.z;
     }
 
     // Update is called once per frame
@@ -65,9 +65,9 @@ public class RightRacket : MonoBehaviour
         y = rightHand.transform.position.y;
         z = rightHand.transform.position.z;
         transform.position = new Vector3(x, y, z);
-        rotx = leftHand.transform.rotation.x - rotxi;
-        roty = leftHand.transform.rotation.y - rotyi;
-        rotz = leftHand.transform.rotation.z - rotzi;
+        rotx = rightHand.transform.rotation.x - rotxi;
+        roty = rightHand.transform.rotation.y - rotyi;
+        rotz = rightHand.transform.rotation.z - rotzi;
         transform.eulerAngles = new Vector3((360 * rotx / Mathf.PI) % 360, (360 * roty / Mathf.PI) % 360, (360 * rotz / Mathf.PI) % 360);
     }
     private void OnTriggerEnter(Collider other)

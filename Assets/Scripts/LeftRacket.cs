@@ -33,15 +33,17 @@ public class LeftRacket : MonoBehaviour
 
     private float rotz;
 
-    private float rotw;
-
     private float rotxi;
 
     private float rotyi;
 
     private float rotzi;
 
-    private float rotwi;
+    private float rotx1;
+
+    private float roty1;
+
+    private float rotz1;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +54,9 @@ public class LeftRacket : MonoBehaviour
         rotxi = leftHand.transform.rotation.x;
         rotyi = leftHand.transform.rotation.y;
         rotzi = leftHand.transform.rotation.z;
-        rotwi = leftHand.transform.rotation.w;
+        rotx1 = transform.rotation.x;
+        roty1 = transform.rotation.y;
+        rotz1 = transform.rotation.z;
     }
 
     // Update is called once per frame
@@ -68,10 +72,9 @@ public class LeftRacket : MonoBehaviour
         y = leftHand.transform.position.y;
         z = leftHand.transform.position.z;
         transform.position = new Vector3(x, y, z);
-        rotx = leftHand.transform.rotation.x - rotxi;
-        roty = leftHand.transform.rotation.y - rotyi;
-        rotz = leftHand.transform.rotation.z - rotzi;
-        rotw = leftHand.transform.rotation.w - rotwi;
+        rotx = leftHand.transform.rotation.x - rotxi + rotx1;
+        roty = leftHand.transform.rotation.y - rotyi + roty1;
+        rotz = leftHand.transform.rotation.z - rotzi + rotz1;
         transform.eulerAngles = new Vector3(360*rotx / Mathf.PI, 360*roty / Mathf.PI, 360*rotz / Mathf.PI);
     }
     private void OnTriggerEnter(Collider other)

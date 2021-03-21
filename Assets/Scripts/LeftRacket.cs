@@ -13,8 +13,6 @@ public class LeftRacket : MonoBehaviour
 
     [SerializeField] private ScoreUpdate scoreUpdate;
 
-    [SerializeField] private Rigidbody hand;
-
     [SerializeField] private Text goodBall;
 
     [SerializeField] private LeftHandManager leftHand;

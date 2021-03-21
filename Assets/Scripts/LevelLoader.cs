@@ -32,7 +32,7 @@ public class LevelLoader : MonoBehaviour
         }
         else instance = this;
     }
-
+    //on setup tous les arguments à leur valeur par défaut
     void Start()
     {
         difficulte = 1;
@@ -43,7 +43,7 @@ public class LevelLoader : MonoBehaviour
         game2 = false;
         textMain.text = "DEUX MAINS";
     }
-
+    //fonction à appeler pour changer la main sélectionnée
     public void ChangeHands()
     {
         if (!leftHand & !rightHand)
@@ -68,6 +68,7 @@ public class LevelLoader : MonoBehaviour
             }
         }
     }
+    //fonction à appeler pour changer la difficulté sélectionnée
     public void ChangeDifficulty()
     {
         if (difficulte == 1)
@@ -89,7 +90,7 @@ public class LevelLoader : MonoBehaviour
             }
         }
     }
-
+    //fonction à appeler pour lancer le jeu 1 ou le jeu 2
     public void LoadLevel(int sceneIndex)
     {
         if (sceneIndex == 1)
@@ -103,12 +104,12 @@ public class LevelLoader : MonoBehaviour
             SceneManager.LoadScene(sceneIndex);
         }
     }
-
+    //fonction à appaler pour quitter l'application
     public void QuitGame()
     {
         Application.Quit();
     }
-
+    //fonction à appeler pour afficher le menu des statistiques
     public void Option()
     {
         option.gameObject.SetActive(true);

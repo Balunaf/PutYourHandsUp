@@ -31,7 +31,6 @@ public class ShootManager : MonoBehaviour
         x = Random.Range(-1f, 1f);
         y = Random.Range(-0.5f, 0.5f);
         transform.position = new Vector3(x, y, z);
-        NewBall();
     }
 
     // Update is called once per frame
@@ -41,11 +40,10 @@ public class ShootManager : MonoBehaviour
         totalTime += Time.deltaTime;
         if (totalTime > 20)
         {
-            //faire le pop up
             canvas.gameObject.SetActive(true);
             lineRenderer.gameObject.SetActive(true);
         }
-        else
+        if (totalTime < 18)
         {
             if (time > 8 && LevelLoader.instance.difficulte == 1)
             {
